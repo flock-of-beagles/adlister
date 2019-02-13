@@ -17,6 +17,12 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+            <div class="form-group">
+                <label for="checkbox1">Categories</label>
+                <input type="checkbox" name="checkbox1" id="checkbox1" value="Test1">
+                <label for="checkbox2">Test</label>
+                <input type="checkbox" name="checkbox2" id="checkbox2" value="Test2">
+            </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>

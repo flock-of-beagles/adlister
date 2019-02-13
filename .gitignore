@@ -1,4 +1,6 @@
 *.iml
 target/
 .idea/
-Config.java
+com.codeup.adlister.Config.java
+sqltest.sql
+**sqltest.sql

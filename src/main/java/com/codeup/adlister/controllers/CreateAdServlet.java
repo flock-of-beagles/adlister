@@ -23,7 +23,10 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("title"),
             request.getParameter("description")
         );
-        DaoFactory.getAdsDao().insert(ad);
+        String tester = request.getParameter("checkbox1");
+        System.out.println(tester);
+        long test = DaoFactory.getAdsDao().insert(ad);
+        System.out.println(test);
         response.sendRedirect("/ads");
     }
 }
