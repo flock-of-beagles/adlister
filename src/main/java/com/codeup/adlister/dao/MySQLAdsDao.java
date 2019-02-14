@@ -52,7 +52,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
-    //TODO Implement this in CreateAdServlet
     public Long insertCategory (Category category) throws SQLException {
         String insertQuery = "INSERT INTO categories(ad_id, category) VALUES (?, ?)";
             PreparedStatement ps = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);

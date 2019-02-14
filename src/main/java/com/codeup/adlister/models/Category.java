@@ -14,6 +14,10 @@ public class Category {
         return ad_id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getCategory (){
         return category;
     }

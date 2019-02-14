@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,13 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+    public Long insertCategory(Category category){
+        if (ads == null){
+            ads = generateAds();
+        }
+        return category.getAd_id();
     }
 
     private List<Ad> generateAds() {
