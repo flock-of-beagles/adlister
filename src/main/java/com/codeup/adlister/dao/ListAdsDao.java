@@ -6,7 +6,7 @@ import com.codeup.adlister.models.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -27,6 +27,7 @@ public class ListAdsDao implements Ads {
         ads.add(ad);
         return ad.getId();
     }
+
 
     public Long insertCategory(Category category){
         if (ads == null){

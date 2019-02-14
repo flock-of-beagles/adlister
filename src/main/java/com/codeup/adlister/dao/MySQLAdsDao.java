@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.Config;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.Category;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -34,6 +35,14 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
+    }
+    //TODO Figure out how to tie this in to the profile page
+    public List<Ad> profileFind(long profileID) throws SQLException {
+        PreparedStatement stmt;
+        stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+        stmt.setLong(1, profileID);
+        ResultSet rs = stmt.executeQuery();
+        return createAdsFromResults(rs);
     }
 
     @Override
