@@ -17,6 +17,8 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+            <%--Checkboxes for categories--%>
+            <%--TODO Finalize categories and set up MYSQL for them--%>
             <div class="form-group">
                 <label for="checkbox1">Categories</label>
                 <input type="checkbox" name="checkbox1" id="checkbox1" value="Test1">

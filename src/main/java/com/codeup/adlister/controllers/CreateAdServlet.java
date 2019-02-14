@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,9 +24,21 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("title"),
             request.getParameter("description")
         );
+        // Checkboxes only give a value if they are checked, other wise request.getParamater gives a null
+        //TODO Write the MYSQL you lazy asshole
         String tester = request.getParameter("checkbox1");
+        String tester2;
+        tester2 = request.getParameter("checkbox2");
         System.out.println(tester);
+        System.out.println(tester2);
         long test = DaoFactory.getAdsDao().insert(ad);
+        if (tester!=null){
+            Category category = new Category(
+                    test,
+                    tester
+            );
+
+        }
         System.out.println(test);
         response.sendRedirect("/ads");
     }
