@@ -12,11 +12,12 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <%--This anchor tag redirects to the ViewAdServlet while also stashing the ID of it's associated ad in the session--%>
+            <a href="/ads/view?id=${ad.id}">View Details</a>
         </div>
     </c:forEach>
 </div>
