@@ -49,5 +49,6 @@
         </div>
 <br><br>
     </div>
+    <jsp:include page="/WEB-INF/partials/jsScripts.jsp"/>
 </body>
 </html>

@@ -9,30 +9,298 @@
             <%--</a>--%>
         <%--</div>--%>
         <%--<ul class="nav navbar-nav navbar-right">--%>
-            <%--<li><a href="/login">Login</a></li>--%>
-            <%--<li><a href="/logout">Logout</a></li>--%>
-        <%--</ul>--%>
-    <%--</div><!-- /.navbar-collapse -->--%>
-    <%--</div><!-- /.container-fluid -->--%>
+<%--<li><a href="/login">Login</a></li>--%>
+<%--<li><a href="/logout">Logout</a></li>--%>
+<%--</ul>--%>
+<%--</div><!-- /.navbar-collapse -->--%>
+<%--</div><!-- /.container-fluid -->--%>
 <%--</nav>--%>
+
+<jsp:include page="/WEB-INF/partials/jsScripts.jsp"/>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .overlay
+            {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+
+            .overlay-content
+            {
+                position: relative;
+                top: 25%;
+                width: 35%;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .overlay a
+            {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .overlay a:hover, .overlay a:focus
+            {
+                color: #f1f1f1;
+            }
+
+            .overlay .closebtn
+            {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
+
+            @media screen and (max-height: 450px)
+            {
+                .overlay a {font-size: 20px}
+                .overlay .closebtn
+                {
+                    font-size: 40px;
+                    top: 15px;
+                    right: 35px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">
+                    Adlister
+                </a>
+                <a href="#">
+                    Search by Username
+                </a>
+                <a href="#">
+                    Search by catagorey
+                </a>
+                <a href="#">
+                    Contact
+                </a>
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    </body>
+</html>
 
 <nav class="navbar nav-custom navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-left">
-
-        <h3 id="subheading" style="text-align: center">The C-List Superhero Job Board</h3>
-        <ul class="nav navbar-nav navbar-right">
+            <h1>
+                <span id="under">
+                    Under
+                </span>
+                <span id="dogs">
+                    Dogs!
+                </span>
+            </h1>
+        </div>
+        <h3 id="subheading" style="text-align: center">
+            The C-List Superhero Job Board
+        </h3>
+        <a id="adlist-cust" class="badge badge-primary navbar-brand" href="/ads">
+            Adlister
+        </a>
+        <div class="nav navbar-nav navbar-right">
+            <div class="navbar-right">
             <c:choose>
                 <c:when test="${sessionScope.user != null}">
-                    <li><a href="/logout">Logout</a></li>
+                        <a id="logout-cust" href="/logout">
+                            Logout
+                        </a>
                 </c:when>
                 <c:otherwise>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <div class="navbar-right">
+                        <a class="badge badge-primary" id="reg-cust" href="/register">
+                            Register
+                        </a>
+                        <a class="badge badge-primary" id="login-cust" href="/login">
+                            Login
+                        </a>
+                    </div>
                 </c:otherwise>
             </c:choose>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+            </div>
+
+        </div>
+    </div>
 </nav>
+
+
+
+
+                <%--<nav class="navbar navbar-default navbar-fixed-top mainmenu">--%>
+                    <%--<div class="container-fluid">--%>
+                        <%--<div class="navbar-header">--%>
+                            <%--<a class="navbar-brand" href="#">LOGO<br>HERE</a>--%>
+                            <%--<div class="custom-menu">--%>
+                                <%--<ul class="nav navbar-nav tool-items">--%>
+                                    <%--<li class="icon-link"><a href="#"><span>Our jobs</span></a></li>--%>
+                                    <%--<li class="lang-picker">--%>
+                                        <%--<div class="lang lang-current">   <a href="#">EN <span class="caret"></span></a>--%>
+                                        <%--</div>--%>
+                                        <%--<div class="lang list">--%>
+                                            <%--<a href="#">LT</a>--%>
+                                        <%--</div>--%>
+                                    <%--</li>--%>
+                                <%--</ul>--%>
+                            <%--</div>--%>
+                            <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
+                                <%--<span class="icon-bar"></span>--%>
+                                <%--<span class="icon-bar"></span>--%>
+                                <%--<span class="icon-bar"></span>--%>
+                            <%--</button>--%>
+                        <%--</div>--%>
+                        <%--<div class="collapse navbar-collapse" id="myNavbar">--%>
+                            <%--<ul class="nav navbar-nav">--%>
+                                <%--<li class="active"><a href="about.html" class="nav-link">About Us</a></li>--%>
+                                <%--<li><a href="case-studies.html" class="nav-link">Case Studies</a></li>--%>
+                                <%--<li><a href="product-overview.html" class="nav-link">Solutions</a></li>--%>
+                                <%--<li><a href="services.html" class="nav-link">Services</a></li>--%>
+                                <%--<li><a href="prices.html" class="nav-link">Pricing</a></li>--%>
+                                <%--<li><a href="blog.html" class="nav-link">News</a></li>--%>
+                                <%--<li><a href="order-form.html" class="nav-link">Send Query</a></li>--%>
+                                <%--<li><a href="contacts.html" class="nav-link">Contacts</a></li>--%>
+                            <%--</ul>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</nav>--%>
+
+
+
+<%--<nav class="navbar navbar-dark bg-danger">--%>
+    <%--<a class="navbar-brand" href="#">--%>
+        <%--Never expand--%>
+    <%--</a>--%>
+    <%--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentNV" aria-controls="navbarSupportedContentNV" aria-expanded="false" aria-label="Toggle navigation">--%>
+        <%--<span class="navbar-toggler-icon"></span>--%>
+    <%--</button>--%>
+
+    <%--<div class="collapse navbar-collapse" id="navbarSupportedContentNV">--%>
+        <%--<ul class="navbar-nav mr-auto">--%>
+            <%--<li class="nav-item active">--%>
+                <%--<a class="nav-link" href="#">--%>
+                    <%--Home--%>
+                    <%--<span class="sr-only">--%>
+                        <%--(current)--%>
+                    <%--</span>--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="#">--%>
+                    <%--Link--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li class="nav-item dropdown">--%>
+                <%--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNV" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
+                    <%--Dropdown--%>
+                <%--</a>--%>
+                <%--<div class="dropdown-menu" aria-labelledby="navbarDropdownNV">--%>
+                    <%--<a class="dropdown-item" href="#">--%>
+                        <%--Action--%>
+                    <%--</a>--%>
+                    <%--<a class="dropdown-item" href="#">--%>
+                        <%--Another action--%>
+                    <%--</a>--%>
+                    <%--<div class="dropdown-divider"></div>--%>
+                    <%--<a class="dropdown-item" href="#">--%>
+                        <%--Something else here--%>
+                    <%--</a>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+            <%--<li class="nav-item">--%>
+                <%--<a class="nav-link disabled" href="#">--%>
+                    <%--Disabled--%>
+                <%--</a>--%>
+            <%--</li>--%>
+        <%--</ul>--%>
+        <%--<form class="form-inline my-2 my-lg-0">--%>
+            <%--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--%>
+            <%--<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">--%>
+                <%--Search--%>
+            <%--</button>--%>
+        <%--</form>--%>
+    <%--</div>--%>
+<%--</nav>--%>
+
+
+
+
+<%--<nav class="navbar navbar-fixed-top navbar-dark bg-primary">--%>
+    <%--<div class="container">--%>
+        <%--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">--%>
+            <%--&#9776;--%>
+        <%--</button>--%>
+        <%--<div class="collapse navbar-toggleable" id="exCollapsingNavbar2">--%>
+            <%--<div class="nav-item">--%>
+                <%--<a class="navbar-brand nav-link" href="#">IMGS</a>--%>
+            <%--</div>--%>
+
+            <%--<ul class="nav navbar-nav">--%>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link" href="#">About</a>--%>
+                <%--</li>--%>
+
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link" href="#">Contact</a>--%>
+                <%--</li>--%>
+            <%--</ul>--%>
+
+            <%--<ul class="nav navbar-nav">--%>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-item nav-link" href="#">Sign Up</a>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-item nav-link" href="#">Login</a>--%>
+                <%--</li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</nav>--%>
+
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>--%>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>--%>
+<%--=--%>
+
+
+<%--<!DOCTYPE html>--%>
+<%--<html>--%>
+    <%--<head>--%>
+        <%--&lt;%&ndash;<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">&ndash;%&gt;--%>
+
+    <%--</head>--%>
+    <%--<body>--%>
+
+
+
+
+
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div><!-- /.navbar-collapse -->--%>
+    <%--</div><!-- /.container-fluid -->--%>
+
+<%--</nav>--%>
