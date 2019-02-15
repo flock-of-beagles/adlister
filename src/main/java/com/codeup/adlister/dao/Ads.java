@@ -13,4 +13,6 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     Long insertCategory(Category category) throws SQLException;
+    Ad findAdbyID (long AdId) throws SQLException;
+    List<String> findCategoriesbyID (long ad_id) throws SQLException;
 }

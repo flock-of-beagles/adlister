@@ -36,7 +36,7 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-    //TODO Figure out how to tie this in to the profile page
+    //Given an user_id to look for, this method will return all ads made by that user
     public List<Ad> profileFind(long profileID) throws SQLException {
         PreparedStatement stmt;
         stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
@@ -61,6 +61,10 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+
+    //Like insert but for the categories table
+    //Takes in a category object, breaks it down and then insterts it into the categories table
+    //Returns a long that corresponds with the index of the row it insterted its query into
     public Long insertCategory (Category category) throws SQLException {
         String insertQuery = "INSERT INTO categories(ad_id, category) VALUES (?, ?)";
             PreparedStatement ps = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
@@ -79,6 +83,28 @@ public class MySQLAdsDao implements Ads {
             rs.getString("title"),
             rs.getString("description")
         );
+    }
+    //Given an ID this method will return that specific ad
+    public Ad findAdbyID (long adId) throws SQLException {
+        String searchQuery = "SELECT * from ads WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setLong(1,adId);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        return extractAd(rs);
+    }
+    //Given an ad_id this method will return all categories that ad has as a List<String>
+    public List<String> findCategoriesbyID (long ad_id) throws SQLException {
+        List<String> categories = new ArrayList<>();
+        String searchQuery = "SELECT * FROM categories where ad_id = ?";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setLong(1, ad_id);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()){
+            String hold = rs.getString("category");
+            categories.add(hold);
+        }
+        return categories;
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {

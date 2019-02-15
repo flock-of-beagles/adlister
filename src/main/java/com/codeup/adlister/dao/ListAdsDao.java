@@ -5,7 +5,7 @@ import com.codeup.adlister.models.Category;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Don't think this is necessary any more, for now I just got rid of its interface to disconnect it from everything else
 public class ListAdsDao {
     private List<Ad> ads;
 

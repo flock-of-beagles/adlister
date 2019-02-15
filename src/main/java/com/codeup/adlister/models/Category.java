@@ -1,5 +1,5 @@
 package com.codeup.adlister.models;
-
+// This constuctor is used to make objects to feed into the Categories table
 public class Category {
     private long id;
     private long ad_id;
@@ -9,7 +9,7 @@ public class Category {
         this.ad_id = ad_id;
         this.category = category;
     }
-
+// Getters and setters for dealing with category objects
     public long getAd_id(){
         return ad_id;
     }

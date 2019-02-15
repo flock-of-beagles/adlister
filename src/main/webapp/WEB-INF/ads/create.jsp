@@ -21,6 +21,7 @@
             <%--TODO Finalize categories--%>
             <div class="form-group">
                 <label for="checkbox1">Categories</label>
+                <%--Checkboxes only send a value if they are checked, thus in servlets we can verfiy them by comparing them against null--%>
                 <input type="checkbox" name="checkbox1" id="checkbox1" value="Test1">
                 <label for="checkbox2">Test</label>
                 <input type="checkbox" name="checkbox2" id="checkbox2" value="Test2">
