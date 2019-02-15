@@ -17,11 +17,6 @@
 <%--</nav>--%>
 
 <jsp:include page="/WEB-INF/partials/jsScripts.jsp"/>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
 
             .overlay
@@ -30,8 +25,8 @@
                 width: 0;
                 position: fixed;
                 z-index: 1;
-                top: 0;
-                left: 0;
+                top: 0em;
+                left: 0em;
                 background-color: rgb(0,0,0);
                 background-color: rgba(0,0,0, 0.9);
                 overflow-x: hidden;
@@ -43,17 +38,20 @@
                 position: relative;
                 top: 25%;
                 width: 35%;
-                text-align: center;
+                text-align: right;
                 margin-top: 30px;
             }
 
             .overlay a
             {
+                position: relative;
                 padding: 8px;
                 text-decoration: none;
                 font-size: 36px;
                 color: #818181;
                 display: block;
+                top: -2em;
+                left: 1em;
                 transition: 0.3s;
             }
 
@@ -64,51 +62,58 @@
 
             .overlay .closebtn
             {
-                position: absolute;
-                top: 20px;
-                right: 45px;
+                position: relative;
+                top: 0em;
+                right: 9em;
                 font-size: 60px;
             }
 
-            @media screen and (max-height: 450px)
+            @media screen and (max-height: 1440px)
             {
-                .overlay a {font-size: 20px}
+                .overlay a {font-size: 2.5em}
                 .overlay .closebtn
                 {
                     font-size: 40px;
-                    top: 15px;
-                    right: 35px;
+                    top: 0em;
+                    right: 11em;
+                    left: 11em;
                 }
             }
-        </style>
-    </head>
-    <body>
 
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="overlay-content">
-                <a href="#">
-                    Adlister
-                </a>
-                <a href="#">
-                    Search by Username
-                </a>
-                <a href="#">
-                    Search by catagorey
-                </a>
-                <a href="#">
-                    Contact
-                </a>
-            </div>
-        </div>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-    </body>
-</html>
+            #span-cust
+            {
+                position: fixed;
+                left: 0.5em;
+                top: 0em;
+            }
+        </style>
 
 <nav class="navbar nav-custom navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-left">
+
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a href="#">
+                        Adlister
+                    </a>
+                    <a href="#">
+                        Search by Username
+                    </a>
+                    <a href="#">
+                        Search by catagorey
+                    </a>
+                    <a href="#">
+                        Contact
+                    </a>
+                </div>
+            </div>
+            <span id="span-cust" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
             <h1>
                 <span id="under">
                     Under
@@ -121,9 +126,6 @@
         <h3 id="subheading" style="text-align: center">
             The C-List Superhero Job Board
         </h3>
-        <a id="adlist-cust" class="badge badge-primary navbar-brand" href="/ads">
-            Adlister
-        </a>
         <div class="nav navbar-nav navbar-right">
             <div class="navbar-right">
             <c:choose>

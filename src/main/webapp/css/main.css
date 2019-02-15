@@ -15,10 +15,18 @@ img #team {
     width:300px;
     height:200px;
 }
-#dogs{
+#dogs
+{
+    position: fixed;
+    top: 0em;
+    left: 3.4em;
     color:#d05702
 }
-#under{
+#under
+{
+    position: fixed;
+    top: 0em;
+    left: 1.3em;
     color:#0060be;
 }
 #subheading{
