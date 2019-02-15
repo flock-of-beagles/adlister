@@ -1,0 +1,72 @@
+div.splash{
+    border: 1px solid white;
+}
+h1{text-align: center}
+body {
+    font-family: 'Bangers', cursive;
+    background-image: url("../images/dark-honeycomb.png");
+    color: whitesmoke;
+}
+img #unemployed{
+    width:300px;
+    height:200px;
+}
+img #team {
+    width:300px;
+    height:200px;
+}
+#dogs{
+    color:#d05702
+}
+#under{
+    color:#0060be;
+}
+#subheading{
+    color: #88959b;
+}
+.card {
+    background-color: transparent;
+}
+
+#reg-cust
+{
+    font-size: 1.2em;
+    position: relative;
+    opacity: 0.6;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    left: -1em;
+}
+
+#adlist-cust
+{
+    font-size: 1.2em;
+    position: relative;
+    opacity: 0.6;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    left: 6.4em;
+}
+
+#login-cust
+{
+    font-size: 1.2em;
+    position: relative;
+    opacity: 0.6;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    /*left: -3em;*/
+}
+
+.btn-outline-dark
+{
+    border-color: #FFF;
+    color: #FFF;
+}
+.btn-outline-dark:hover
+{
+    border-color: #343a40;
+}
+
+
+
+/*=======================================================*/
+
+
