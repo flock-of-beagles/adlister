@@ -5,15 +5,17 @@ h1{text-align: center}
 body {
     font-family: 'Bangers', cursive;
     background-image: url("../images/dark-honeycomb.png");
-    color: whitesmoke;
+    color: black;
 }
-img #unemployed{
-    width:300px;
-    height:200px;
+img#unemployed{
+    width:80%;
+    height: 40%;
+    margin-left:10%;
 }
-img #team {
-    width:300px;
-    height:200px;
+img#team{
+    width:80%;
+    height: 40%;
+    margin-left:10%;
 }
 #dogs
 {
@@ -73,6 +75,13 @@ img #team {
     border-color: #343a40;
 }
 
+p.card-text{
+    margin-left:18%;
+    color: #88959b;
+}
+a.card-link{
+    margin-left:33%
+}
 
 
 /*=======================================================*/
