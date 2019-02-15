@@ -15,4 +15,6 @@ public interface Ads {
     Long insertCategory(Category category) throws SQLException;
     Ad findAdbyID (long AdId) throws SQLException;
     List<String> findCategoriesbyID (long ad_id) throws SQLException;
+    Long editAd (Ad ad, long id) throws SQLException;
+    void deleteCategories (long ad_id) throws SQLException;
 }

@@ -19,6 +19,9 @@ import java.util.List;
 public class ViewAdServlet extends HttpServlet {
 //    List<Ad> testAds = new ArrayList<>();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getParameter("id")==null){
+            response.sendRedirect("/ads");
+        }
         //This long comes from the ads/index.jsp anchor links
         long id = Long.parseLong(request.getParameter("id"));
         System.out.println(id);
