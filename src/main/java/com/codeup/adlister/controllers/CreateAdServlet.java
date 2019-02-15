@@ -35,7 +35,7 @@ public class CreateAdServlet extends HttpServlet {
         System.out.println(tester2);
         long adIndex = DaoFactory.getAdsDao().insert(ad);
         try {
-            //See comment below for CategoryInsertHelper, the returned long is the index of the inserted column (if an insert occurred)
+            //See comment below for CategoryInsertHelper, the returned long is the index of the inserted row (if an insert occurred)
             long result1 = CategoryInsertHelper(adIndex, tester);
             long result2 = CategoryInsertHelper(adIndex, tester2);
         } catch (SQLException e) {
