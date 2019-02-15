@@ -1,21 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="/css/main.css" type="text/css">
-<%--<nav class="navbar navbar-default">--%>
-    <%--<div class="container-fluid">--%>
-        <%--<!-- Brand and toggle get grouped for better mobile display -->--%>
-        <%--<div class="navbar-header">--%>
-            <%--<a class="navbar-brand" href="/ads">--%>
-                <%--Adlister--%>
-            <%--</a>--%>
-        <%--</div>--%>
-        <%--<ul class="nav navbar-nav navbar-right">--%>
-<%--<li><a href="/login">Login</a></li>--%>
-<%--<li><a href="/logout">Logout</a></li>--%>
-<%--</ul>--%>
-<%--</div><!-- /.navbar-collapse -->--%>
-<%--</div><!-- /.container-fluid -->--%>
-<%--</nav>--%>
-
 <jsp:include page="/WEB-INF/partials/jsScripts.jsp"/>
 
 <!DOCTYPE html>
@@ -44,7 +27,7 @@
                 top: 25%;
                 width: 35%;
                 text-align: center;
-                margin-top: 30px;
+                margin-top: 60px;
             }
 
             .overlay a
@@ -101,7 +84,7 @@
                 </a>
             </div>
         </div>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        <span align="center" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     </body>
 </html>
 
