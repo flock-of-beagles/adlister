@@ -1,5 +1,6 @@
 package com.codeup.adlister;
 
+
 public class Config
 {
     private String url = "jdbc:mysql://localhost/adlister_db";
@@ -11,6 +12,7 @@ public class Config
 
     public String getUrl()
     {
+
         return url;
     }
 
@@ -21,4 +23,6 @@ public class Config
     public String getPassword() {
         return password;
     }
+
 }
+
