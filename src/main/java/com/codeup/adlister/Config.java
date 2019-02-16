@@ -1,9 +1,9 @@
 package com.codeup.adlister;
 
 public class Config {
-    private String url = "jdbc:mysql://localhost/adlister_db";
-    private String user = "adlister_user";
-    private String password = "password123";
+    private String url = "jdbc:mysql://localhost/refactor_test";
+    private String user = "refactor_user";
+    private String password = "refactor123";
     public String getUrl() {
         return url;
     }

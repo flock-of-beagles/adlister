@@ -3,9 +3,9 @@ package com.codeup.adlister.models;
 public class Category {
     private long id;
     private long ad_id;
-    private String category;
+    private long category;
 
-    public Category (long ad_id, String category){
+    public Category (long ad_id, long category){
         this.ad_id = ad_id;
         this.category = category;
     }
@@ -18,7 +18,7 @@ public class Category {
         this.id = id;
     }
 
-    public String getCategory (){
+    public long getCategory (){
         return category;
     }
 }

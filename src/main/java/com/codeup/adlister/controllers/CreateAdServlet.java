@@ -36,8 +36,8 @@ public class CreateAdServlet extends HttpServlet {
         long adIndex = DaoFactory.getAdsDao().insert(ad);
         try {
             //See comment below for CategoryInsertHelper, the returned long is the index of the inserted row (if an insert occurred)
-            long result1 = CategoryInsertHelper(adIndex, tester);
-            long result2 = CategoryInsertHelper(adIndex, tester2);
+            long result1 = CategoryInsertHelper(adIndex, tester, 1);
+            long result2 = CategoryInsertHelper(adIndex, tester2, 2);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -45,12 +45,13 @@ public class CreateAdServlet extends HttpServlet {
         response.sendRedirect("/ads");
     }
     //Helper method to streamline adding categories, feed it the adIndex and the relevant checkbox value and if the checkbox was clicked it will do a table insert
-    private long CategoryInsertHelper(long index, String category) throws SQLException {
+    private long CategoryInsertHelper(long index, String category, long num) throws SQLException {
         long result;
         if (category!=null){
+            long insertCat = num;
             Category cat = new Category(
                     index,
-                    category
+                    insertCat
             );
                 result = DaoFactory.getAdsDao().insertCategory(cat);
         }else result = 0;

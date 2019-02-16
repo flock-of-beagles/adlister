@@ -27,12 +27,13 @@ public class ViewAdServlet extends HttpServlet {
         System.out.println(id);
         //Testing code, demonstrates ability to retirve an ID and find specific ad as well as it's categories
         Ad specAd = null;
-        List<String> testList = null;
+        List<Long> testList = null;
         try {
             specAd = DaoFactory.getAdsDao().findAdbyID(id);
+            System.out.println("Title");
             System.out.println(specAd.getTitle());
             testList = DaoFactory.getAdsDao().findCategoriesbyID(id);
-            for (String category : testList){
+            for (long category : testList){
                 System.out.println(category);
             }
         } catch (SQLException e) {
