@@ -15,11 +15,12 @@
 </head>
 <body>
     <h1>It's Working</h1>
-    <%--<c:forEach var="testAd" items="${testAds}">--%>
-        <%--<div class="col-md-6">--%>
-            <%--<h2>${testAd.title}</h2>--%>
-            <%--<p>${testAd.description}</p>--%>
-        <%--</div>--%>
-    <%--</c:forEach>--%>
+        <div class="col-md-6">
+            <h2>${specAd.title}</h2>
+            <p>${specAd.description}</p>
+            <c:if test="${testList.contains(1)}">
+                <p>Working</p>
+            </c:if>
+        </div>
 </body>
 </html>

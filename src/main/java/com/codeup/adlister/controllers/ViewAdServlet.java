@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 //TODO Finish this servlet and associated JSP
-//TODO Make this unreachable unless you are coming from an ad link
 //This servlet displays specific ads, only way to reach this should be to click a link on an ad
 @WebServlet(name = "controllers.ViewAdServlet", urlPatterns = "/ads/view")
 public class ViewAdServlet extends HttpServlet {
@@ -24,15 +23,14 @@ public class ViewAdServlet extends HttpServlet {
         }
         //This long comes from the ads/index.jsp anchor links
         long id = Long.parseLong(request.getParameter("id"));
-        System.out.println(id);
         //Testing code, demonstrates ability to retirve an ID and find specific ad as well as it's categories
         Ad specAd = null;
         List<Long> testList = null;
         try {
             specAd = DaoFactory.getAdsDao().findAdbyID(id);
-            System.out.println("Title");
-            System.out.println(specAd.getTitle());
+            request.getSession().setAttribute("specAd", specAd);
             testList = DaoFactory.getAdsDao().findCategoriesbyID(id);
+            request.getSession().setAttribute("testList", testList);
             for (long category : testList){
                 System.out.println(category);
             }
