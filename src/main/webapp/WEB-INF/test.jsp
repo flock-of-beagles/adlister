@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ryanglazer
@@ -13,6 +14,9 @@
     </jsp:include>
 </head>
 <body>
+    <c:if test="${check==1}">
+        <h1>Sticky Form triggered!</h1>
+    </c:if>
     <form action="/test" method="post">
         <div class="form-group">
             <label for="tester">Type Yes to redirect, anything else to test sticky forms</label>

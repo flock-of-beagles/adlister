@@ -10,11 +10,6 @@ import java.io.IOException;
 @WebServlet(name = "controllers.StickyFromTestServlet", urlPatterns = "/test")
 public class StickyFormTestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String tester = request.getParameter("test");
-        if (tester == null) {
-            System.out.println("Test string had no value");
-            request.getSession().setAttribute("test", tester);
-        }
         request.getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
     }
 
@@ -22,9 +17,11 @@ public class StickyFormTestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String validate = req.getParameter("tester");
         if (validate.equals("Yes")){
+            req.getSession().setAttribute("check", 0);
             resp.sendRedirect("/success");
         }
         else{
+            req.getSession().setAttribute("check",1);
             System.out.println("String was " + validate);
             req.getSession().setAttribute("tester", validate);
             resp.sendRedirect("/test");

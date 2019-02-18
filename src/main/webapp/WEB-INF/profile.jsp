@@ -17,6 +17,7 @@
                 <p>${ad.description}</p>
                 <%--Redirects to edit page while stashing ad to be edited ID in session--%>
                 <a href="/ads/edit?editID=${ad.id}">Edit Ad</a>
+                <a href="/delete?deleteID=${ad.id}">Delete Ad</a>
             </div>
         </c:forEach>
 

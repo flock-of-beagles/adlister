@@ -17,11 +17,28 @@ import java.util.List;
 public class EditAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         long editID = Long.parseLong(request.getParameter("editID"));
+        request.getSession().setAttribute("editIDRec", editID);
         Ad ad = null;
         try {
             ad = DaoFactory.getAdsDao().findAdbyID(editID);
-            System.out.println(ad.getDescription());
+            if (request.getSession().getAttribute("editTitle")==null){
+                request.getSession().setAttribute("editTitle", ad.getTitle());
+            }
+            if (request.getSession().getAttribute("editDescription")==null){
+                request.getSession().setAttribute("editDescription", ad.getDescription());
+            }
+            request.setAttribute("editTitle", ad.getTitle());
+            request.setAttribute("editDescription", ad.getDescription());
             request.setAttribute("editAD", ad);
+            List<Long> categories = null;
+            categories = DaoFactory.getAdsDao().findCategoriesbyID(editID);
+            if (categories.contains(1L)){
+                request.getSession().setAttribute("category1", 1);
+            }
+            if (categories.contains(2L)){
+                request.getSession().setAttribute("category2", 1);
+            }
+            request.getSession().setAttribute("testList", categories);
             request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -33,18 +50,28 @@ public class EditAdServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         long editID = Long.parseLong(request.getParameter("IDEdit"));
         System.out.println(editID);
-        Ad ad = new Ad(
-                user.getId(),
-                request.getParameter("title"),
-                request.getParameter("description")
-        );
-        try {
-            long result = DaoFactory.getAdsDao().editAd(ad, editID);
+        String editTitle = request.getParameter("editTitle");
+        String editDescription = request.getParameter("editDescription");
+        if (editTitle.equals("") || editDescription.equals("")) {
+            request.getSession().setAttribute("emptyField", 1);
+            long editIDRec = Long.parseLong(request.getParameter("IDEdit"));
+            response.sendRedirect("/ads/edit?editID="+editIDRec);
+        } else {
+            Ad ad = new Ad(
+                    user.getId(),
+                    request.getParameter("editTitle"),
+                    request.getParameter("editDescription")
+            );
+            try {
+                long result = DaoFactory.getAdsDao().editAd(ad, editID);
+                request.getSession().setAttribute("editTitle", null);
+                request.getSession().setAttribute("editDescription", null);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            response.sendRedirect("/profile");
         }
-        response.sendRedirect("/profile");
     }
 }
 

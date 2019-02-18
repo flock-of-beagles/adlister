@@ -123,11 +123,28 @@ public class MySQLAdsDao implements Ads {
         return categories;
     }
 
-    public void deleteCategories(long ad_id) throws SQLException {
-        String deleteQuery = "DELETE * FROM ads_categories WHERE ad_id = ?";
-        PreparedStatement stmt = connection.prepareStatement(deleteQuery);
-        stmt.setLong(1, ad_id);
-        stmt.executeUpdate();
+    public void deleteCategories(long ad_id) {
+        try {
+            String deleteQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
+            PreparedStatement stmt = null;
+            stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, ad_id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAd(long deleteId) {
+        try {
+            String deleteQuery = "DELETE FROM ads WHERE id = ?";
+            PreparedStatement stmt = null;
+            stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, deleteId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
