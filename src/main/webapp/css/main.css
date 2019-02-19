@@ -82,7 +82,13 @@ p.card-text{
 a.card-link{
     margin-left:33%
 }
-
+.label{
+    color: #88959b;
+    font-size: x-large;
+}
+.title{
+    color:#d05702;
+}
 
 /*=======================================================*/
 

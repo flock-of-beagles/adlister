@@ -46,13 +46,13 @@
 
             .overlay .closebtn
             {
-                position: relative;
+                position: fixed;
                 top: 0em;
                 right: 9em;
                 font-size: 60px;
             }
 
-            @media screen and (max-height: 1440px)
+            @media screen and (max-height: 1080px)
             {
                 .overlay a {font-size: 2.5em}
                 .overlay .closebtn
@@ -69,6 +69,7 @@
                 position: fixed;
                 left: 0.5em;
                 top: 0em;
+                color:white;
             }
 
             #search-cust
