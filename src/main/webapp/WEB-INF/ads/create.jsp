@@ -7,6 +7,7 @@
     </jsp:include>
 </head>
 <body>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <c:if test="${emptyFields==1}">
             <h1>Title and Description must have text</h1>
@@ -50,6 +51,7 @@
                 <input type="checkbox" name="checkbox10" id="checkbox10" value="10">
                 <label for="checkbox11">Looking for Member</label>
                 <input type="checkbox" name="checkbox11" id="checkbox11" value="11">
+
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
