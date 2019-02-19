@@ -81,7 +81,7 @@ img#team{
 {
     font-size: 1.2em;
     position: relative;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     padding: 0.6em 0.6em 0.6em 0.6em;
     left: -1em;
 }
@@ -90,7 +90,7 @@ img#team{
 {
     font-size: 1.2em;
     position: relative;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     padding: 0.6em 0.6em 0.6em 0.6em;
     left: 6.4em;
 }
@@ -99,7 +99,7 @@ img#team{
 {
     font-size: 1.2em;
     position: relative;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     padding: 0.6em 0.6em 0.6em 0.6em;
     /*left: -3em;*/
 }
