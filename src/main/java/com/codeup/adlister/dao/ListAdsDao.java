@@ -1,11 +1,12 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class ListAdsDao implements Ads {
+//Don't think this is necessary any more, for now I just got rid of its interface to disconnect it from everything else
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -25,6 +26,14 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+
+    public Long insertCategory(Category category){
+        if (ads == null){
+            ads = generateAds();
+        }
+        return category.getAd_id();
     }
 
     private List<Ad> generateAds() {
