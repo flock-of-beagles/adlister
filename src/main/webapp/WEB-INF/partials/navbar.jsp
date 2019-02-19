@@ -52,8 +52,7 @@
                 font-size: 60px;
             }
 
-            @media screen and (max-height: 1080px)
-            {
+
                 .overlay a {font-size: 2.5em}
                 .overlay .closebtn
                 {
@@ -62,7 +61,7 @@
                     right: 11em;
                     left: 11em;
                 }
-            }
+
 
             #span-cust
             {
