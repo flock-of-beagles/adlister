@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 //TODO Finish this servlet and associated JSP
-//TODO Make this unreachable unless you are coming from an ad link
 //This servlet displays specific ads, only way to reach this should be to click a link on an ad
 @WebServlet(name = "controllers.ViewAdServlet", urlPatterns = "/ads/view")
 public class ViewAdServlet extends HttpServlet {
@@ -24,15 +23,48 @@ public class ViewAdServlet extends HttpServlet {
         }
         //This long comes from the ads/index.jsp anchor links
         long id = Long.parseLong(request.getParameter("id"));
-        System.out.println(id);
         //Testing code, demonstrates ability to retirve an ID and find specific ad as well as it's categories
         Ad specAd = null;
-        List<String> testList = null;
+        List<Long> categories = null;
         try {
             specAd = DaoFactory.getAdsDao().findAdbyID(id);
-            System.out.println(specAd.getTitle());
-            testList = DaoFactory.getAdsDao().findCategoriesbyID(id);
-            for (String category : testList){
+            request.getSession().setAttribute("specAd", specAd);
+            categories = DaoFactory.getAdsDao().findCategoriesbyID(id);
+            if (categories.contains(1L)){
+                request.setAttribute("category1", 1);
+            }
+            if (categories.contains(2L)){
+                request.setAttribute("category2", 1);
+            }
+            if (categories.contains(3L)){
+                request.setAttribute("category3", 1);
+            }
+            if (categories.contains(4L)){
+                request.setAttribute("category4", 1);
+            }
+            if (categories.contains(5L)){
+                request.setAttribute("category5", 1);
+            }
+            if (categories.contains(6L)){
+                request.setAttribute("category6", 1);
+            }
+            if (categories.contains(7L)){
+                request.setAttribute("category7", 1);
+            }
+            if (categories.contains(8L)){
+                request.setAttribute("category8", 1);
+            }
+            if (categories.contains(9L)){
+                request.setAttribute("category9", 1);
+            }
+            if (categories.contains(10L)){
+                request.setAttribute("category10", 1);
+            }
+            if (categories.contains(11L)){
+                request.setAttribute("category11", 1);
+            }
+            request.getSession().setAttribute("testList", categories);
+            for (long category : categories){
                 System.out.println(category);
             }
         } catch (SQLException e) {

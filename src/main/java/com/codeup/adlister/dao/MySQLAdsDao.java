@@ -64,26 +64,23 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public Long editAd(Ad ad, long id) throws SQLException {
+    public void editAd(Ad ad, long id) throws SQLException {
         String editQuery = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
         PreparedStatement stmt = connection.prepareStatement(editQuery, Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1, ad.getTitle());
         stmt.setString(2, ad.getDescription());
         stmt.setLong(3, id);
         stmt.executeUpdate();
-        ResultSet rs = stmt.getGeneratedKeys();
-        rs.next();
-        return rs.getLong(1);
     }
 
     //Like insert but for the categories table
     //Takes in a category object, breaks it down and then insterts it into the categories table
     //Returns a long that corresponds with the index of the row it insterted its query into
     public Long insertCategory(Category category) throws SQLException {
-        String insertQuery = "INSERT INTO categories(ad_id, category) VALUES (?, ?)";
+        String insertQuery = "INSERT INTO ads_categories (ad_id, ad_category) VALUES (?, ?)";
         PreparedStatement ps = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
         ps.setLong(1, category.getAd_id());
-        ps.setString(2, category.getCategory());
+        ps.setLong(2, category.getCategory());
         ps.executeUpdate();
         ResultSet rs = ps.getGeneratedKeys();
         rs.next();
@@ -110,24 +107,42 @@ public class MySQLAdsDao implements Ads {
     }
 
     //Given an ad_id this method will return all categories that ad has as a List<String>
-    public List<String> findCategoriesbyID(long ad_id) throws SQLException {
-        List<String> categories = new ArrayList<>();
-        String searchQuery = "SELECT * FROM categories where ad_id = ?";
+    public List<Long> findCategoriesbyID(long ad_id) throws SQLException {
+        List<Long> categories = new ArrayList<>();
+        String searchQuery = "SELECT * FROM ads_categories where ad_id = ?";
         PreparedStatement stmt = connection.prepareStatement(searchQuery);
         stmt.setLong(1, ad_id);
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-            String hold = rs.getString("category");
+            long hold = rs.getLong("ad_category");
             categories.add(hold);
         }
         return categories;
     }
 
-    public void deleteCategories(long ad_id) throws SQLException {
-        String deleteQuery = "DELETE * FROM categories WHERE ad_id = ?";
-        PreparedStatement stmt = connection.prepareStatement(deleteQuery);
-        stmt.setLong(1, ad_id);
-        stmt.executeUpdate();
+    public void deleteCategories(long ad_id) {
+        try {
+            System.out.println("deleteCategories");
+            String deleteQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
+            PreparedStatement stmt = null;
+            stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, ad_id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAd(long deleteId) {
+        try {
+            String deleteQuery = "DELETE FROM ads WHERE id = ?";
+            PreparedStatement stmt = null;
+            stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, deleteId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
@@ -137,4 +152,16 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    public List<Ad> findAdsbyTitleorCategory (String search) throws SQLException {
+        search = "%"+search+"%";
+        System.out.println(search);
+        String searchQuery = "SELECT * FROM ads WHERE title like ? OR description like ?";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setString(1, search);
+        stmt.setString(2, search);
+        ResultSet rs = stmt.executeQuery();
+        return createAdsFromResults(rs);
+    }
 }
+
