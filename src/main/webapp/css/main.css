@@ -6,8 +6,17 @@ h1
     text-align: center
 }
 
-
 a:hover
+{
+    color: #d05702;
+}
+
+.navbar-right .anchorHover:hover
+{
+    color: #d05702;
+}
+
+#myNav .anchorHover:hover
 {
     color: #d05702;
 }
@@ -57,10 +66,14 @@ img#team{
     left: 1.3em;
     color:#0060be;
 }
-#subheading{
+#subheading
+{
+    position: relative;
+    left: 3em;
     color: #88959b;
 }
-.card {
+.card
+{
     background-color: transparent;
 }
 

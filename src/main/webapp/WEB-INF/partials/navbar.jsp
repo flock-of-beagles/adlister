@@ -111,7 +111,7 @@
                         View Profile
                     </a>
                     <a class="anchorHover" style="width: 5.1em;" href="/ads/create">
-                        Create Add
+                        Create Ad
                     </a>
                     <a class="anchorHover" style="width: 4.1em;" href="#">
                         Contact
@@ -132,7 +132,7 @@
             </h1>
             </a>
         </div>
-        <h3 id="subheading" style="text-align: center">
+        <h3 id="subheading">
             The C-List Superhero Job Board
         </h3>
         <div class="nav navbar-nav navbar-right">
@@ -145,10 +145,10 @@
                 </c:when>
                 <c:otherwise>
                     <div class="navbar-right">
-                        <a class="badge badge-primary" id="reg-cust" href="/register">
+                        <a class="anchorHover badge badge-primary" id="reg-cust" href="/register">
                             Register
                         </a>
-                        <a class="badge badge-primary" id="login-cust" href="/login">
+                        <a class="anchorHover badge badge-primary" id="login-cust" href="/login">
                             Login
                         </a>
                     </div>
