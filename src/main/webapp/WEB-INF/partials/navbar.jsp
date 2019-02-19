@@ -70,7 +70,45 @@
                 left: 0.5em;
                 top: 0em;
             }
+
+            #search-cust
+            {
+                position: relative;
+                top: -34.9em;
+                left: 2em;
+                right: 4em;
+            }
+
+            #searchbtn-cust
+            {
+                position: relative;
+                top: -37.2em;
+                left: 7em;
+                right: 4em;
+            }
+
         </style>
+
+
+
+
+
+<%--CREATE DYNAMIC GREETING FOR SLIDE OUT NAV BAR THAT GREETS USERNAME--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <nav class="navbar nav-custom navbar-default">
     <div class="container-fluid">
@@ -80,18 +118,20 @@
             <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
-                    <a href="#">
+                    <a style="width: 4.5em;" href="#">
                         Adlister
                     </a>
-                    <a href="#">
-                        Search by Username
+                    <a style="width: 5.6em;" href="#">
+                        View Profile
                     </a>
-                    <a href="#">
-                        Search by catagorey
+                    <a style="width: 5.1em;" href="#">
+                        Create Add
                     </a>
-                    <a href="#">
+                    <a style="width: 4.1em;" href="#">
                         Contact
                     </a>
+                    <input id="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button id="searchbtn-cust" class="search-cust btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
                 </div>
             </div>
             <span id="span-cust" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
