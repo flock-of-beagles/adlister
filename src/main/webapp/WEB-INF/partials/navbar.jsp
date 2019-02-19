@@ -75,7 +75,7 @@
             #search-cust
             {
                 position: relative;
-                top: 0.1em;
+                top: -28.9em;
                 left: 2em;
                 right: 4em;
             }
@@ -83,7 +83,7 @@
             #searchbtn-cust
             {
                 position: relative;
-                top: -2.2em;
+                top: -31.2em;
                 left: 7em;
                 right: 4em;
             }
@@ -105,16 +105,16 @@
             <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
-                    <a class="anchorHover" id="viewAd" style="width: 4.5em;" href="/ads">
+                    <a class="anchorHover" id="viewAd" href="/ads">
                         View Ads
                     </a>
-                    <a class="anchorHover" id="viewProfile" style="width: 5.6em;" href="/profile">
+                    <a class="anchorHover" id="viewProfile" href="/profile">
                         View Profile
                     </a>
-                    <a class="anchorHover" id="createAd" style="width: 5.1em;" href="/ads/create">
+                    <a class="anchorHover" id="createAd" href="/ads/create">
                         Create Ad
                     </a>
-                    <a class="anchorHover" id="contact" style="width: 4.1em;" href="#">
+                    <a class="anchorHover" id="contact" href="#">
                         Contact
                     </a>
                     <input id="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

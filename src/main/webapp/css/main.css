@@ -9,7 +9,25 @@ h1
 
 #viewAd
 {
+    width: 4.5em;
+}
 
+#viewProfile
+{
+    width: 5.6em;
+}
+
+#createAd
+{
+    position: relative;
+    left: 0.5em;
+    width: 5.1em;
+
+}
+
+#contact
+{
+    width: 4.1em;
 }
 
 a:hover
