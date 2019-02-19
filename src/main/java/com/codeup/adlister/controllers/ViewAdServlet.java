@@ -25,13 +25,46 @@ public class ViewAdServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         //Testing code, demonstrates ability to retirve an ID and find specific ad as well as it's categories
         Ad specAd = null;
-        List<Long> testList = null;
+        List<Long> categories = null;
         try {
             specAd = DaoFactory.getAdsDao().findAdbyID(id);
             request.getSession().setAttribute("specAd", specAd);
-            testList = DaoFactory.getAdsDao().findCategoriesbyID(id);
-            request.getSession().setAttribute("testList", testList);
-            for (long category : testList){
+            categories = DaoFactory.getAdsDao().findCategoriesbyID(id);
+            if (categories.contains(1L)){
+                request.setAttribute("category1", 1);
+            }
+            if (categories.contains(2L)){
+                request.setAttribute("category2", 1);
+            }
+            if (categories.contains(3L)){
+                request.setAttribute("category3", 1);
+            }
+            if (categories.contains(4L)){
+                request.setAttribute("category4", 1);
+            }
+            if (categories.contains(5L)){
+                request.setAttribute("category5", 1);
+            }
+            if (categories.contains(6L)){
+                request.setAttribute("category6", 1);
+            }
+            if (categories.contains(7L)){
+                request.setAttribute("category7", 1);
+            }
+            if (categories.contains(8L)){
+                request.setAttribute("category8", 1);
+            }
+            if (categories.contains(9L)){
+                request.setAttribute("category9", 1);
+            }
+            if (categories.contains(10L)){
+                request.setAttribute("category10", 1);
+            }
+            if (categories.contains(11L)){
+                request.setAttribute("category11", 1);
+            }
+            request.getSession().setAttribute("testList", categories);
+            for (long category : categories){
                 System.out.println(category);
             }
         } catch (SQLException e) {
