@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -38,6 +39,33 @@ public class EditAdServlet extends HttpServlet {
             if (categories.contains(2L)){
                 request.getSession().setAttribute("category2", 1);
             }
+            if (categories.contains(3L)){
+                request.getSession().setAttribute("category3", 1);
+            }
+            if (categories.contains(4L)){
+                request.getSession().setAttribute("category4", 1);
+            }
+            if (categories.contains(5L)){
+                request.getSession().setAttribute("category5", 1);
+            }
+            if (categories.contains(6L)){
+                request.getSession().setAttribute("category6", 1);
+            }
+            if (categories.contains(7L)){
+                request.getSession().setAttribute("category7", 1);
+            }
+            if (categories.contains(8L)){
+                request.getSession().setAttribute("category8", 1);
+            }
+            if (categories.contains(9L)){
+                request.getSession().setAttribute("category9", 1);
+            }
+            if (categories.contains(10L)){
+                request.getSession().setAttribute("category10", 1);
+            }
+            if (categories.contains(11L)){
+                request.getSession().setAttribute("category11", 1);
+            }
             request.getSession().setAttribute("testList", categories);
             request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
         } catch (SQLException e) {
@@ -62,8 +90,32 @@ public class EditAdServlet extends HttpServlet {
                     request.getParameter("editTitle"),
                     request.getParameter("editDescription")
             );
+            String checkbox1 = request.getParameter("checkbox1");
+            String checkbox2 = request.getParameter("checkbox2");
+            String checkbox3 = request.getParameter("checkbox3");
+            String checkbox4 = request.getParameter("checkbox4");
+            String checkbox5 = request.getParameter("checkbox5");
+            String checkbox6 = request.getParameter("checkbox6");
+            String checkbox7 = request.getParameter("checkbox7");
+            String checkbox8 = request.getParameter("checkbox8");
+            String checkbox9 = request.getParameter("checkbox9");
+            String checkbox10 = request.getParameter("checkbox10");
+            String checkbox11 = request.getParameter("checkbox11");
             try {
-                long result = DaoFactory.getAdsDao().editAd(ad, editID);
+                DaoFactory.getAdsDao().editAd(ad, editID);
+                System.out.println(editID);
+                DaoFactory.getAdsDao().deleteCategories(editID);
+                long result1 = CategoryInsertHelper(editID, checkbox1, 1);
+                long result2 = CategoryInsertHelper(editID, checkbox2, 2);
+                long result3 = CategoryInsertHelper(editID, checkbox3, 3);
+                long result4 = CategoryInsertHelper(editID, checkbox4, 4);
+                long result5 = CategoryInsertHelper(editID, checkbox5, 5);
+                long result6 = CategoryInsertHelper(editID, checkbox6, 6);
+                long result7 = CategoryInsertHelper(editID, checkbox7, 7);
+                long result8 = CategoryInsertHelper(editID, checkbox8, 8);
+                long result9 = CategoryInsertHelper(editID, checkbox9, 9);
+                long result10 = CategoryInsertHelper(editID, checkbox10, 10);
+                long result11 = CategoryInsertHelper(editID, checkbox11, 11);
                 request.getSession().setAttribute("editTitle", null);
                 request.getSession().setAttribute("editDescription", null);
 
@@ -71,7 +123,21 @@ public class EditAdServlet extends HttpServlet {
                 e.printStackTrace();
             }
             response.sendRedirect("/profile");
+
         }
+
+    }
+    private long CategoryInsertHelper(long index, String category, long num) throws SQLException {
+        long result;
+        if (category != null) {
+            long insertCat = num;
+            Category cat = new Category(
+                    index,
+                    insertCat
+            );
+            result = DaoFactory.getAdsDao().insertCategory(cat);
+        } else result = 0;
+        return result;
     }
 }
 

@@ -64,16 +64,13 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public Long editAd(Ad ad, long id) throws SQLException {
+    public void editAd(Ad ad, long id) throws SQLException {
         String editQuery = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
         PreparedStatement stmt = connection.prepareStatement(editQuery, Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1, ad.getTitle());
         stmt.setString(2, ad.getDescription());
         stmt.setLong(3, id);
         stmt.executeUpdate();
-        ResultSet rs = stmt.getGeneratedKeys();
-        rs.next();
-        return rs.getLong(1);
     }
 
     //Like insert but for the categories table
@@ -125,6 +122,7 @@ public class MySQLAdsDao implements Ads {
 
     public void deleteCategories(long ad_id) {
         try {
+            System.out.println("deleteCategories");
             String deleteQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
             PreparedStatement stmt = null;
             stmt = connection.prepareStatement(deleteQuery);
