@@ -152,4 +152,14 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    public List<Ad> findAdsbyTitleorCategory (String search) throws SQLException {
+        String searchQuery = "SELECT * FROM ADS WHERE title = ? OR description = ?";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setString(1, search);
+        stmt.setString(2, search);
+        ResultSet rs = stmt.executeQuery();
+        return createAdsFromResults(rs);
+    }
 }
+
