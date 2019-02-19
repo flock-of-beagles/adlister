@@ -26,10 +26,16 @@
             <div class="col-6 col-md-6 splash">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title" style="color:#d05702">Looking to recruit a hero? </h3>
-                        <h4 class="card-subtitle mb-2 text-muted">Find heroes looking for work.</h4>
+                        <h3 class="card-title" style="color:#d05702">
+                            Looking to recruit a hero?
+                        </h3>
+                        <h4 class="card-subtitle mb-2 text-muted">
+                            Find heroes looking for work.
+                        </h4>
                         <img id = "unemployed" src="images/unemployed_thumb.jpeg">
-                        <p class="card-text" style="font-size:1em">Sometimes great heroes just need great opportunities.</p>
+                        <p class="card-text" style="font-size:1em">
+                            Sometimes great heroes just need great opportunities.
+                        </p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
