@@ -154,7 +154,8 @@ public class MySQLAdsDao implements Ads {
     }
 
     public List<Ad> findAdsbyTitleorCategory (String search) throws SQLException {
-        String searchQuery = "SELECT * FROM ADS WHERE title = ? OR description = ?";
+        search = "%"+search+"%";
+        String searchQuery = "SELECT * FROM ADS WHERE title like ? OR description like ?";
         PreparedStatement stmt = connection.prepareStatement(searchQuery);
         stmt.setString(1, search);
         stmt.setString(2, search);
