@@ -14,13 +14,11 @@
     </jsp:include>
 </head>
 <body>
-    <c:if test="${check==1}">
-        <h1>Sticky Form triggered!</h1>
-    </c:if>
+    <h1>Search Test</h1>
     <form action="/test" method="post">
         <div class="form-group">
-            <label for="tester">Type Yes to redirect, anything else to test sticky forms</label>
-            <input id="tester" name="tester" class="form-control" type="text" value="${tester}">
+            <label for="tester">Enter search query</label>
+            <input id="tester" name="tester" class="form-control" type="text">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
