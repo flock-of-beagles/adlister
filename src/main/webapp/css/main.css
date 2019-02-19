@@ -6,6 +6,30 @@ h1
     text-align: center
 }
 
+
+#viewAd
+{
+    width: 4.5em;
+}
+
+#viewProfile
+{
+    width: 5.6em;
+}
+
+#createAd
+{
+    position: relative;
+    left: 0.5em;
+    width: 5.1em;
+
+}
+
+#contact
+{
+    width: 4.1em;
+}
+
 a:hover
 {
     color: #d05702;
@@ -42,7 +66,9 @@ body
     background-image: url("../images/dark-honeycomb.png");
     color: black;
 }
-img#unemployed{
+
+img#unemployed
+{
     width:80%;
     height: 40%;
     margin-left:10%;
@@ -52,6 +78,7 @@ img#team{
     height: 40%;
     margin-left:10%;
 }
+
 #dogs
 {
     position: fixed;
