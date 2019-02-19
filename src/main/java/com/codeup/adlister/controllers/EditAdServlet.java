@@ -34,37 +34,37 @@ public class EditAdServlet extends HttpServlet {
             List<Long> categories = null;
             categories = DaoFactory.getAdsDao().findCategoriesbyID(editID);
             if (categories.contains(1L)){
-                request.getSession().setAttribute("category1", 1);
+                request.setAttribute("category1", 1);
             }
             if (categories.contains(2L)){
-                request.getSession().setAttribute("category2", 1);
+                request.setAttribute("category2", 1);
             }
             if (categories.contains(3L)){
-                request.getSession().setAttribute("category3", 1);
+                request.setAttribute("category3", 1);
             }
             if (categories.contains(4L)){
-                request.getSession().setAttribute("category4", 1);
+                request.setAttribute("category4", 1);
             }
             if (categories.contains(5L)){
-                request.getSession().setAttribute("category5", 1);
+                request.setAttribute("category5", 1);
             }
             if (categories.contains(6L)){
-                request.getSession().setAttribute("category6", 1);
+                request.setAttribute("category6", 1);
             }
             if (categories.contains(7L)){
-                request.getSession().setAttribute("category7", 1);
+                request.setAttribute("category7", 1);
             }
             if (categories.contains(8L)){
-                request.getSession().setAttribute("category8", 1);
+                request.setAttribute("category8", 1);
             }
             if (categories.contains(9L)){
-                request.getSession().setAttribute("category9", 1);
+                request.setAttribute("category9", 1);
             }
             if (categories.contains(10L)){
-                request.getSession().setAttribute("category10", 1);
+                request.setAttribute("category10", 1);
             }
             if (categories.contains(11L)){
-                request.getSession().setAttribute("category11", 1);
+                request.setAttribute("category11", 1);
             }
             request.getSession().setAttribute("testList", categories);
             request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
