@@ -14,7 +14,9 @@
     </jsp:include>
 </head>
 <body>
-    <h1>It's Working</h1>
+    <h1>
+        It's Working
+    </h1>
         <div class="col-md-6">
             <h2>${specAd.title}</h2>
             <p>${specAd.description}</p>

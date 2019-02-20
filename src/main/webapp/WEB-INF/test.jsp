@@ -14,6 +14,7 @@
     </jsp:include>
 </head>
 <body>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <h1>Search Test</h1>
     <form action="/search/result" method="post">
         <div class="form-group">
@@ -58,3 +59,5 @@
     </form>
 </body>
 </html>
+
+
