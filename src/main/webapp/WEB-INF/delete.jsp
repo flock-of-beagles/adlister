@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Should not see this</title>
+
+    <jsp:include page="/WEB-INF/partials/head.jsp"/>
+
+    <title>
+        Should not see this
+    </title>
 </head>
 <body>
-    
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 </body>
 </html>
