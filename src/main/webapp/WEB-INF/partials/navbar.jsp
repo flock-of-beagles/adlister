@@ -53,14 +53,25 @@
             }
 
 
+
+
                 .overlay a {font-size: 2.5em}
                 .overlay .closebtn
                 {
+                    margin: 0px 0px 0px 0px;
                     font-size: 40px;
+                    width: 5em;
                     top: 0em;
                     right: 11em;
                     left: 11em;
+
                 }
+                .overlay .closebtn:hover
+                {
+                    color: #d05702;
+                }
+
+
 
 
             #span-cust
@@ -74,16 +85,16 @@
             #search-cust
             {
                 position: relative;
-                top: -28.9em;
-                left: 2em;
+                top: -1.9em;
+                left: 5em;
                 right: 4em;
             }
 
             #searchbtn-cust
             {
                 position: relative;
-                top: -31.2em;
-                left: 7em;
+                top: -4.2em;
+                left: 10em;
                 right: 4em;
             }
 
@@ -104,6 +115,11 @@
             <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
+                    <c:if test="${sessionScope.user.username != null}">
+                        <h1 id="greetingNav">
+                            Welcome ${sessionScope.user.username}
+                        </h1>
+                    </c:if>
                     <a class="anchorHover" id="viewAd" href="/ads">
                         View Ads
                     </a>
@@ -159,6 +175,4 @@
         </div>
     </div>
 </nav>
-
-
 

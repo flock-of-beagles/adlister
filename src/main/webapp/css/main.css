@@ -130,6 +130,14 @@ div.card-body{
     left: 6.4em;
 }
 
+#greetingNav
+{
+    position: relative;
+    top: -5em;
+    left: 2em;
+    color: #d05702;
+}
+
 #login-cust
 {
     font-size: 1.2em;
