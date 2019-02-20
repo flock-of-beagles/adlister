@@ -12,18 +12,28 @@
     <div class="container">
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row">
-            <div class="col-6 col-md-6 splash shadow-lg p-3 mb-5">
+            <div class="zoom col-6 col-md-6 splash shadow-lg p-3 mb-5">
                 <div class="card" style="align-content: center">
                     <div class="card-body">
-                        <h3 class="card-title" style="color:#d05702">Assembling a Team?</h3>
-                        <h4 class="card-subtitle mb-2 text-muted">See all superhero teams</h4>
+                <a class="indexAnchor" href="/search/result">
+                        <h3 class="card-title" style="color:#d05702">
+                            Assembling a Team?
+                        </h3>
+                        <h4 class="card-subtitle mb-2 text-muted">
+                            See all superhero teams
+                        </h4>
                         <img id = "team" src="images/team_thumb.jpeg" style="width:80%; height:40%">
-                        <p class="card-text" style="font-size:1em">Our greatest superpower is being a part of a super team.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                    <br>
+                        <p class="card-text">
+                            Our greatest superpower is being a part of a super team.
+                        </p>
+                </a>
                     </div>
-                </div></div>
-            <div class=" rounded col-6 col-md-6 splash shadow-lg p-3 mb-5">
+                </div>
+            </div>
+
+            <div class="zoom rounded col-6 col-md-6 splash shadow-lg p-3 mb-5">
+                <a class="indexAnchor" href="/search/result">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title" style="color:#d05702">
@@ -33,16 +43,15 @@
                             Find heroes looking for work.
                         </h4>
                         <img id = "unemployed" src="images/unemployed_thumb.jpeg">
-                        <p class="card-text" style="font-size:1em">
+                        <br>
+                        <p class="card-text">
                             Sometimes great heroes just need great opportunities.
                         </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
-<br><br>
     </div>
     <jsp:include page="/WEB-INF/partials/jsScripts.jsp"/>
 </body>
