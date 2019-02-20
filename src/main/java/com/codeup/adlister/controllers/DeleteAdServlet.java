@@ -14,10 +14,14 @@ import java.sql.SQLException;
 @WebServlet(name = "controllers.DeleteAdServlet", urlPatterns = "/delete")
 public class DeleteAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long deleteID = Long.parseLong(request.getParameter("deleteID"));
-        System.out.println(deleteID);
-        DaoFactory.getAdsDao().deleteCategories(deleteID);
-        DaoFactory.getAdsDao().deleteAd(deleteID);
-        response.sendRedirect("/profile");
+        if (request.getParameter("deleteID") == null) {
+            response.sendRedirect("/ads");
+        } else {
+            long deleteID = Long.parseLong(request.getParameter("deleteID"));
+            System.out.println(deleteID);
+            DaoFactory.getAdsDao().deleteCategories(deleteID);
+            DaoFactory.getAdsDao().deleteAd(deleteID);
+            response.sendRedirect("/profile");
+        }
     }
 }
