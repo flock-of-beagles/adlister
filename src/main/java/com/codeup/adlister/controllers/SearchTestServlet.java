@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "controllers.SearchTestServlet", urlPatterns = "/test")
+@WebServlet(name = "controllers.SearchTestServlet", urlPatterns = "/search")
 public class SearchTestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
@@ -20,15 +20,14 @@ public class SearchTestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String search = req.getParameter("tester");
-        System.out.println(search);
-        //TODO Set up a servlet for results, it can just use the ads/index jsp though
-        try {
-            List<Ad> results = DaoFactory.getAdsDao().findAdsbyTitleorCategory(search);
-            req.getSession().setAttribute("ads", results);
-            resp.sendRedirect("/ads");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        String search = req.getParameter("tester");
+//        System.out.println(search);
+//        try {
+//            List<Ad> results = DaoFactory.getAdsDao().findAdsbyTitleorDescription(search);
+//            req.getSession().setAttribute("ads", results);
+//            resp.sendRedirect("/ads");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 }

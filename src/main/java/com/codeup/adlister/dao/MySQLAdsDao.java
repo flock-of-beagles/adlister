@@ -120,6 +120,16 @@ public class MySQLAdsDao implements Ads {
         return categories;
     }
 
+    public List<Ad> findAdsByCategories (List<Long> categories) throws SQLException {
+        String search = categories.toString();
+        search = search.replaceAll("\\[", "(").replaceAll("\\]",")");
+        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category in ? GROUP BY ads_categories.ad_id";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setString(1,search);
+        ResultSet rs = stmt.executeQuery();
+        return createAdsFromResults(rs);
+    }
+
     public void deleteCategories(long ad_id) {
         try {
             System.out.println("deleteCategories");
@@ -153,7 +163,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    public List<Ad> findAdsbyTitleorCategory (String search) throws SQLException {
+    public List<Ad> findAdsbyTitleorDescription(String search) throws SQLException {
         search = "%"+search+"%";
         System.out.println(search);
         String searchQuery = "SELECT * FROM ads WHERE title like ? OR description like ?";

@@ -117,7 +117,7 @@
                     <a class="anchorHover" id="contact" href="#">
                         Contact
                     </a>
-                    <form action="/search" method="post">
+                    <form action="/search/result" method="post">
                     <input id="search-cust" name="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button id="searchbtn-cust" class="search-cust btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
                     </form>
