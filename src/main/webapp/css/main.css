@@ -1,5 +1,5 @@
-div.splash{
-    border: 1px solid white;
+div.row{
+    /*border:solid 10px whitesmoke;*/
 }
 h1
 {
@@ -63,8 +63,8 @@ a:hover
 body
 {
     font-family: 'Bangers', cursive;
-    background-image: url("../images/dark-honeycomb.png");
     color: black;
+    background-image: url("../images/dark-honeycomb.png");
 }
 
 img#unemployed
@@ -78,13 +78,20 @@ img#team{
     height: 40%;
     margin-left:10%;
 }
-
+div.card-body{
+    border-radius:8%;
+    /*border: 2px solid whitesmoke;*/
+        -webkit-box-shadow:0px 0px 20px 12px #222;
+        -moz-box-shadow:0px 0px 20px 12px #222;
+        box-shadow:0px 0px 20px 12px #222;
+}
 #dogs
 {
     position: fixed;
     top: 0em;
     left: 5.5em;
-    color:#d05702
+    color:#d05702;
+    text-shadow:0px 5px 10px #000;
 }
 #under
 {
@@ -92,11 +99,12 @@ img#team{
     top: 0em;
     left: 3.3em;
     color:#0060be;
+    text-shadow:0px 5px 10px #000;
 }
 #subheading
 {
     position: relative;
-    left: -6em;
+    left: -5em;
     color: #88959b;
 }
 .card
