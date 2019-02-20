@@ -6,6 +6,18 @@ h1
     text-align: center
 }
 
+.zoom
+{
+    padding: 50px;
+
+    transition: transform .2s; /* Animation */
+}
+
+.zoom:hover
+{
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 
 #viewAd
 {
@@ -32,6 +44,7 @@ h1
 
 a:hover
 {
+    text-decoration: none;
     color: #d05702;
 }
 
@@ -165,6 +178,7 @@ div.jumbotron{
     /*left: -3em;*/
 }
 
+
 .btn-outline-dark
 {
     border-color: #FFF;
@@ -175,17 +189,21 @@ div.jumbotron{
     border-color: #343a40;
 }
 
-p.card-text{
-    margin-left:18%;
+.card-text
+{
+    font-size: 1.5em;
     color: #88959b;
 }
-a.card-link{
+a.card-link
+{
     margin-left:33%
 }
+
 .label{
     color: #88959b;
     font-size: x-large;
 }
+
 .description{
     color: #88959b;
     font-size: x-large;
@@ -198,7 +216,9 @@ input[type='checkbox'] {
 .title{
     color:#d05702;
 }
-.label2{
+
+.label2
+{
     padding-right: .5em;
     padding-left: 1.5em;
     color:#0060be;
