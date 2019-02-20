@@ -85,6 +85,21 @@ div.card-body{
         -moz-box-shadow:0px 0px 20px 12px #222;
         box-shadow:0px 0px 20px 12px #222;
 }
+div.jumbotron{
+    text-align: center;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 10%;
+    background-color:transparent;
+    /*border: 2px solid whitesmoke;*/
+    -webkit-box-shadow:0px 0px 20px 12px #222;
+    -moz-box-shadow:0px 0px 20px 12px #222;
+    box-shadow:0px 0px 20px 12px #222;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 5%;
+}
 #dogs
 {
     position: fixed;
@@ -168,6 +183,15 @@ a.card-link{
     color: #88959b;
     font-size: x-large;
 }
+.description{
+    color: #88959b;
+    font-size: x-large;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+input[type='checkbox'] {
+    width:20px;
+    height:20px;
+}
 .title{
     color:#d05702;
 }
@@ -175,6 +199,7 @@ a.card-link{
     padding-right: .5em;
     padding-left: 1.5em;
     color:#0060be;
+    font-size: x-large;
 }
 /*=======================================================*/
 
