@@ -117,8 +117,10 @@
                     <a class="anchorHover" id="contact" href="#">
                         Contact
                     </a>
-                    <input id="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="/search" method="post">
+                    <input id="search-cust" name="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button id="searchbtn-cust" class="search-cust btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
             <span id="span-cust" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
