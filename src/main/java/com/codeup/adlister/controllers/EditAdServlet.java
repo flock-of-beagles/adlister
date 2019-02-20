@@ -17,61 +17,65 @@ import java.util.List;
 @WebServlet(name = "controllers.EditAdServlet", urlPatterns = "/ads/edit")
 public class EditAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long editID = Long.parseLong(request.getParameter("editID"));
-        request.getSession().setAttribute("editIDRec", editID);
-        Ad ad = null;
-        try {
-            ad = DaoFactory.getAdsDao().findAdbyID(editID);
-            if (request.getSession().getAttribute("editTitle")==null){
-                request.getSession().setAttribute("editTitle", ad.getTitle());
+        if (request.getParameter("editID") == null) {
+            response.sendRedirect("profile");
+        } else {
+            long editID = Long.parseLong(request.getParameter("editID"));
+            request.getSession().setAttribute("editIDRec", editID);
+            Ad ad = null;
+            try {
+                ad = DaoFactory.getAdsDao().findAdbyID(editID);
+                if (request.getSession().getAttribute("editTitle") == null) {
+                    request.getSession().setAttribute("editTitle", ad.getTitle());
+                }
+                if (request.getSession().getAttribute("editDescription") == null) {
+                    request.getSession().setAttribute("editDescription", ad.getDescription());
+                }
+                request.setAttribute("editTitle", ad.getTitle());
+                request.setAttribute("editDescription", ad.getDescription());
+                request.setAttribute("editAD", ad);
+                List<Long> categories = null;
+                categories = DaoFactory.getAdsDao().findCategoriesbyID(editID);
+                if (categories.contains(1L)) {
+                    request.setAttribute("category1", 1);
+                }
+                if (categories.contains(2L)) {
+                    request.setAttribute("category2", 1);
+                }
+                if (categories.contains(3L)) {
+                    request.setAttribute("category3", 1);
+                }
+                if (categories.contains(4L)) {
+                    request.setAttribute("category4", 1);
+                }
+                if (categories.contains(5L)) {
+                    request.setAttribute("category5", 1);
+                }
+                if (categories.contains(6L)) {
+                    request.setAttribute("category6", 1);
+                }
+                if (categories.contains(7L)) {
+                    request.setAttribute("category7", 1);
+                }
+                if (categories.contains(8L)) {
+                    request.setAttribute("category8", 1);
+                }
+                if (categories.contains(9L)) {
+                    request.setAttribute("category9", 1);
+                }
+                if (categories.contains(10L)) {
+                    request.setAttribute("category10", 1);
+                }
+                if (categories.contains(11L)) {
+                    request.setAttribute("category11", 1);
+                }
+                request.getSession().setAttribute("testList", categories);
+                request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            if (request.getSession().getAttribute("editDescription")==null){
-                request.getSession().setAttribute("editDescription", ad.getDescription());
-            }
-            request.setAttribute("editTitle", ad.getTitle());
-            request.setAttribute("editDescription", ad.getDescription());
-            request.setAttribute("editAD", ad);
-            List<Long> categories = null;
-            categories = DaoFactory.getAdsDao().findCategoriesbyID(editID);
-            if (categories.contains(1L)){
-                request.setAttribute("category1", 1);
-            }
-            if (categories.contains(2L)){
-                request.setAttribute("category2", 1);
-            }
-            if (categories.contains(3L)){
-                request.setAttribute("category3", 1);
-            }
-            if (categories.contains(4L)){
-                request.setAttribute("category4", 1);
-            }
-            if (categories.contains(5L)){
-                request.setAttribute("category5", 1);
-            }
-            if (categories.contains(6L)){
-                request.setAttribute("category6", 1);
-            }
-            if (categories.contains(7L)){
-                request.setAttribute("category7", 1);
-            }
-            if (categories.contains(8L)){
-                request.setAttribute("category8", 1);
-            }
-            if (categories.contains(9L)){
-                request.setAttribute("category9", 1);
-            }
-            if (categories.contains(10L)){
-                request.setAttribute("category10", 1);
-            }
-            if (categories.contains(11L)){
-                request.setAttribute("category11", 1);
-            }
-            request.getSession().setAttribute("testList", categories);
-            request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

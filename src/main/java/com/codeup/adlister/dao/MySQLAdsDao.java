@@ -128,6 +128,13 @@ public class MySQLAdsDao implements Ads {
         ResultSet rs = stmt.executeQuery();
         return createAdsFromResults(rs);
     }
+    public List<Ad> findAdsByCategories (long category) throws SQLException {
+        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category = ? GROUP BY ads_categories.ad_id";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setLong(1,category);
+        ResultSet rs = stmt.executeQuery();
+        return createAdsFromResults(rs);
+    }
 
     public void deleteCategories(long ad_id) {
         try {

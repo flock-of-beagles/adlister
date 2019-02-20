@@ -16,7 +16,32 @@ import java.util.List;
 @WebServlet(name = "controllers.SearchResultsServlet", urlPatterns = "/search/result")
 public class SearchResultsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/ads");
+        int searchCheck = Integer.parseInt(request.getParameter("SearchID"));
+        if (searchCheck==1){
+            long hold = 10;
+            try {
+                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategories(hold);
+                request.getSession().setAttribute("ads", results);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            request.setAttribute("SearchAds", request.getSession().getAttribute("ads"));
+            request.getRequestDispatcher("/WEB-INF/ads/searchResults.jsp")
+                    .forward(request, response);
+        } else if (searchCheck==2){
+            long hold = 11;
+            try {
+                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategories(hold);
+                request.getSession().setAttribute("ads", results);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            request.setAttribute("SearchAds", request.getSession().getAttribute("ads"));
+            request.getRequestDispatcher("/WEB-INF/ads/searchResults.jsp")
+                    .forward(request, response);
+        } else {
+            response.sendRedirect("/ads");
+        }
     }
 
     @Override
