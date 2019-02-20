@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet(name = "controllers.DeleteAdServlet", urlPatterns = "/delete")
-public class DeleteAdServlet extends HttpServlet {
+public class DeleteAdServlet extends HttpServlet
+{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getParameter("deleteID") == null) {
             response.sendRedirect("/ads");

@@ -13,9 +13,11 @@
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row">
             <div class="zoom col-6 col-md-6 splash shadow-lg p-3 mb-5">
+
                 <div class="card" style="align-content: center">
                     <div class="card-body">
                 <a class="indexAnchor" href="/search/result?SearchID=1">
+
                         <h3 class="card-title" style="color:#d05702">
                             Assembling a Team?
                         </h3>
@@ -23,13 +25,13 @@
                             See all superhero teams
                         </h4>
                         <img id = "team" src="images/team_thumb.jpeg" style="width:80%; height:40%">
-                    <br>
+                            <br>
                         <p class="card-text">
                             Our greatest superpower is being a part of a super team.
                         </p>
-                </a>
                     </div>
                 </div>
+                </a>
             </div>
 
             <div class="zoom rounded col-6 col-md-6 splash shadow-lg p-3 mb-5">
