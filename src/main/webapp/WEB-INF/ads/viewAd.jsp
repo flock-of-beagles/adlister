@@ -14,6 +14,7 @@
     </jsp:include>
 </head>
 <body>
+    <jsp:include page="../../WEB-INF/partials/navbar.jsp" />
     <div class="jumbotron">
         <h2 class="title">${specAd.title}</h2>
         <p class="description">${specAd.description}</p>
