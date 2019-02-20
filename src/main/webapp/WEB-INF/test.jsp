@@ -1,29 +1,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: ryanglazer
+  Date: 2019-02-16
+  Time: 17:07
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Create a new Ad" />
+        <jsp:param name="title" value="Test" />
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <c:if test="${emptyFields==1}">
-            <h1>Title and Description must have text</h1>
-        </c:if>
-        <h1 class="title">Create a new Ad</h1>
-        <form action="/ads/create" method="post">
-            <div class="form-group">
-                <label class="label" for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text" value="${createTitle}">
-            </div>
-            <div class="form-group">
-                <label  class="label" for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" type="text">${createDescription}</textarea>
-            </div>
+    <h1>Search Test</h1>
+    <form action="/search/result" method="post">
+        <div class="form-group">
+            <label for="search">Enter search query</label>
+            <input id="search" name="search" class="form-control" type="text">
+        </div>
+        <input type="submit" class="btn btn-block btn-primary">
+        <br>
+        <form action="/search/result" method="post">
             <%--Checkboxes for categories--%>
-            <%--TODO Finalize categories--%>
             <div class="form-group">
                 <label  class="label2" for="checkbox1">Local</label>
                 <%--Checkboxes only send a value if they are checked, thus in servlets we can verfiy them by comparing them against null--%>
@@ -51,10 +51,10 @@
                 <input  type="checkbox" name="checkbox10" id="checkbox10" value="10">
                 <label  class="label2" for="checkbox11">Looking for Member</label>
                 <input type="checkbox" name="checkbox11" id="checkbox11" value="11">
-
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
-    </div>
+
+    </form>
 </body>
 </html>
