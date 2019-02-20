@@ -12,7 +12,7 @@
     <div class="container">
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row">
-            <div class="col-6 col-md-6 splash">
+            <div class="col-6 col-md-6 splash shadow-lg p-3 mb-5">
                 <div class="card" style="align-content: center">
                     <div class="card-body">
                         <h3 class="card-title" style="color:#d05702">Assembling a Team?</h3>
@@ -23,7 +23,7 @@
                         <a href="#" class="card-link">Another link</a>
                     </div>
                 </div></div>
-            <div class="col-6 col-md-6 splash">
+            <div class=" rounded col-6 col-md-6 splash shadow-lg p-3 mb-5">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title" style="color:#d05702">

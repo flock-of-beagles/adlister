@@ -51,6 +51,10 @@
                 right: 9em;
                 font-size: 60px;
             }
+
+
+
+
                 .overlay a {font-size: 2.5em}
                 .overlay .closebtn
                 {
@@ -66,6 +70,9 @@
                 {
                     color: #d05702;
                 }
+
+
+
 
             #span-cust
             {
