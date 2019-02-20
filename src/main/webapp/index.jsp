@@ -27,7 +27,7 @@
                             <br>
                         <p class="card-text">
                             Our greatest superpower is being a part of a super team.
-                        </p>
+                      </p>
                     </div>
                 </a>
                 </div>
