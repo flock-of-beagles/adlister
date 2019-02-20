@@ -19,5 +19,6 @@ public interface Ads {
     void editAd (Ad ad, long id) throws SQLException;
     void deleteCategories (long ad_id);
     void deleteAd (long id);
-    List<Ad> findAdsbyTitleorCategory (String search) throws SQLException;
+    List<Ad> findAdsbyTitleorDescription(String search) throws SQLException;
+    List<Ad> findAdsByCategories (List<Long> categories) throws SQLException;
 }
