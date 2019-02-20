@@ -13,7 +13,11 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
         <c:forEach var="ad" items="${profileAds}">
             <div class="col-md-6">
-                <h2>${ad.title}</h2>
+                <a href="/ads/view?id=${ad.id}">
+                <h2>
+                        ${ad.title}
+                </h2>
+                </a>
                 <p>${ad.description}</p>
                 <%--Redirects to edit page while stashing ad to be edited ID in session--%>
                 <a href="/ads/edit?editID=${ad.id}">Edit Ad</a>

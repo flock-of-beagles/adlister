@@ -15,9 +15,8 @@
             <div class="zoom col-6 col-md-6 splash shadow-lg p-3 mb-5">
 
                 <div class="card" style="align-content: center">
-                    <div class="card-body">
                 <a class="indexAnchor" href="/search/result?SearchID=1">
-
+                    <div class="card-body">
                         <h3 class="card-title" style="color:#d05702">
                             Assembling a Team?
                         </h3>
@@ -30,8 +29,8 @@
                             Our greatest superpower is being a part of a super team.
                         </p>
                     </div>
-                </div>
                 </a>
+                </div>
             </div>
 
             <div class="zoom rounded col-6 col-md-6 splash shadow-lg p-3 mb-5">

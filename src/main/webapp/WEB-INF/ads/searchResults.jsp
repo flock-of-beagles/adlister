@@ -11,6 +11,7 @@
 
     <div class="container">
         <h1 class="title">Results</h1>
+        <c:if test="${SearchAds.isEmpty()}"><h1 class="title">Sorry, no results to display</h1></c:if>
         <c:forEach var="ad" items="${SearchAds}">
             <div class="col-md-6">
                 <h2 class="label2" style="padding-left:0">${ad.title}</h2>
