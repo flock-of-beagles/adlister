@@ -120,17 +120,17 @@
                             Welcome ${sessionScope.user.username}
                         </h1>
                     </c:if>
+                    <a class="anchorHover" id="contact" href="/search">
+                        Search
+                    </a>
                     <a class="anchorHover" id="viewAd" href="/ads">
                         View Ads
-                    </a>
-                    <a class="anchorHover" id="viewProfile" href="/profile">
-                        View Profile
                     </a>
                     <a class="anchorHover" id="createAd" href="/ads/create">
                         Create Ad
                     </a>
-                    <a class="anchorHover" id="contact" href="#">
-                        Contact
+                    <a class="anchorHover" id="viewProfile" href="/profile">
+                        View Profile
                     </a>
                     <form action="/search/result" method="post">
                     <input id="search-cust" name="search-cust" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

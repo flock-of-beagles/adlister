@@ -37,6 +37,24 @@ h1
 
 }
 
+.searchForm2
+{
+    position: relative;
+    top: -6em;
+    left: 47em;
+    width: 40%;
+    margin: 0;
+}
+
+.searchForm1
+{
+    position: relative;
+    top: 2em;
+    left: 2em;
+    width: 40%;
+    margin: 0;
+}
+
 #contact
 {
     width: 4.1em;
