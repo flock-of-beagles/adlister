@@ -186,23 +186,25 @@ div.jumbotron{
 #dogs
 {
     position: fixed;
+    font-size:1.5em;
     top: 0em;
     left: 5.5em;
     color:#d05702;
-    text-shadow:0px 5px 10px #000;
+    text-shadow: 2px 2px white;
 }
 #under
 {
     position: fixed;
+    font-size:1.5em;
     top: 0em;
     left: 3.3em;
     color:#0060be;
-    text-shadow:0px 5px 10px #000;
+    text-shadow: 2px 2px white;
 }
 #subheading
 {
     position: relative;
-    left: -5em;
+    left: 6rem;
     color: #88959b;
     text-shadow:0px 5px 10px #000;
 }
