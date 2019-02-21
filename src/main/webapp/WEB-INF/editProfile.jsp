@@ -14,8 +14,10 @@
 </head>
 <body>
     <jsp:include page="../WEB-INF/partials/navbar.jsp" />
-    <h1>Edit Profile</h1>
-    <form action="/profile/edit" method="post">
+    <h1 class="title2">
+        Edit Profile
+    </h1>
+    <form id="editProfileForm" action="/profile/edit" method="post">
         <div class="form-group">
             <label class="formLabels" for="username">
                 New Username
