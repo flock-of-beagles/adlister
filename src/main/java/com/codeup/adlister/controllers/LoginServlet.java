@@ -19,6 +19,8 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
             return;
         }
+        System.out.println("editValid is " + request.getParameter("editValid"));
+        request.setAttribute("testing", request.getParameter("editValid"));
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 

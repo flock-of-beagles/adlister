@@ -65,4 +65,14 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    public void editUser (User user, long userID) throws SQLException {
+        String editQuery = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(editQuery);
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getEmail());
+        stmt.setString(3, user.getPassword());
+        stmt.setLong(4, userID);
+        stmt.executeUpdate();
+    }
+
 }
