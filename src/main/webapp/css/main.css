@@ -28,6 +28,9 @@ h1
     max-width:45%;
     padding: 10px;
 }
+h2>a:hover{
+    color:#d05702;
+}
 #viewProfile
 {
     width: 5.6em;
