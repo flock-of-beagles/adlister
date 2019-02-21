@@ -174,6 +174,15 @@ div.jumbotron{
     width: 60%;
     margin-top: 5%;
 }
+
+#editProfileForm
+{
+    margin: auto;
+    width: 75%;
+}
+
+
+
 #dogs
 {
     position: fixed;
@@ -227,6 +236,26 @@ div.jumbotron{
     top: -5em;
     left: 2em;
     color: #d05702;
+}
+
+#logout-cust
+{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    /*opacity: 0.6;*/
+    padding: 0.6em 0.6em 0.6em 0.6em;
+}
+
+
+#edit-cust
+{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    left: -2em;
+    /*opacity: 0.6;*/
+    padding: 0.6em 0.6em 0.6em 0.6em;
 }
 
 #login-cust

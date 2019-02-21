@@ -157,7 +157,10 @@
             <div class="navbar-right">
             <c:choose>
                 <c:when test="${sessionScope.user != null}">
-                        <a id="logout-cust" href="/logout">
+                    <a class="anchorHover badge badge-primary" id="edit-cust" href="/profile/edit">
+                        Edit Profile
+                    </a>
+                        <a class="anchorHover badge badge-primary" id="logout-cust" href="/logout">
                             Logout
                         </a>
                 </c:when>
