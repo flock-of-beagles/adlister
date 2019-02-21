@@ -23,7 +23,7 @@
                         <h4 class="card-subtitle mb-2 text-muted">
                             See all superhero teams
                         </h4>
-                        <img id = "team" src="images/team_thumb.jpeg" style="width:80%; height:40%">
+                        <img id = "team" src="images/superhero-team.png" style="width:80%; height:40%">
                             <br>
                         <p class="card-text">
                             Our greatest superpower is being a part of a super team.
@@ -43,7 +43,7 @@
                         <h4 class="card-subtitle mb-2 text-muted">
                             Find heroes looking for work.
                         </h4>
-                        <img id = "unemployed" src="images/unemployed_thumb.jpeg">
+                        <img id = "unemployed" src="images/superhero.jpg">
                         <br>
                         <p class="card-text">
                             Sometimes great heroes just need great opportunities.
