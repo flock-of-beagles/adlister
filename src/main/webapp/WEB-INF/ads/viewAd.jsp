@@ -18,6 +18,8 @@
     <div class="jumbotron">
         <h2 class="title">${specAd.title}</h2>
         <p class="description">${specAd.description}</p>
+        <p class="description">Created by ${user.username}</p>
+        <a href="mailto:${user.email}?Subject=RE: ${specAd.title}" target="_blank">Contact This User</a>
         <hr class="my-4">
             <div class="form-group">
                 <label class="label2" for="checkbox1"<c:if test="${category1==1}">style="color:#d05702"</c:if>>Local</label>

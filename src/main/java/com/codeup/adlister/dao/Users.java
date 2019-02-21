@@ -9,4 +9,5 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
     void editUser (User user, long userID) throws SQLException;
+    User findById (long userID) throws SQLException;
 }
