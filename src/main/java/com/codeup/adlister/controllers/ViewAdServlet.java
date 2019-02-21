@@ -28,8 +28,12 @@ public class ViewAdServlet extends HttpServlet {
         Ad specAd = null;
         List<Long> categories = null;
         try {
-            specAd = DaoFactory.getAdsDao().findAdbyID(id);long userID = specAd.getUserId();
-            User user =
+            specAd = DaoFactory.getAdsDao().findAdbyID(id);
+            long userID = specAd.getUserId();
+            System.out.println("User ID is " + userID);
+            User user = DaoFactory.getUsersDao().findById(userID);
+            System.out.println(user.getUsername());
+            request.setAttribute("user", user);
             request.getSession().setAttribute("specAd", specAd);
             categories = DaoFactory.getAdsDao().findCategoriesbyID(id);
             if (categories.contains(1L)){

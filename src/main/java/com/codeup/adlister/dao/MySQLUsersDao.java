@@ -80,7 +80,6 @@ public class MySQLUsersDao implements Users {
         PreparedStatement stmt = connection.prepareStatement(searchQuery);
         stmt.setLong(1,userID);
         ResultSet rs = stmt.executeQuery();
-        rs.next();
         return extractUser(rs);
     }
 }
