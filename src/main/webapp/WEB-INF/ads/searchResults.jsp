@@ -10,14 +10,15 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1 class="title">Results</h1>
-        <c:if test="${SearchAds.isEmpty()}"><h1 class="title">Sorry, no results to display</h1></c:if>
+        <h1 class="title2">Results</h1>
+        <c:if test="${SearchAds.isEmpty()}"><h1 class="title2">Sorry, no results to display</h1></c:if>
         <c:forEach var="ad" items="${SearchAds}">
-            <div class="col-md-6">
-                <h2 class="label2" style="padding-left:0">${ad.title}</h2>
-                <p class="label">${ad.description}</p>
+            <div class="col-md-6 zoom">
+                <a href="/ads/view?id=${ad.id}">
+                <h2 class="title3">${ad.title}</h2>
+                <p class="description">${ad.description}</p>
                     <%--This anchor tag redirects to the ViewAdServlet while also stashing the ID of it's associated ad in the session--%>
-                <a href="/ads/view?id=${ad.id}">View Details</a>
+                <a href="/ads/view?id=${ad.id}"style="padding-left:18rem">View Details</a>
             </div>
         </c:forEach>
     </div>
