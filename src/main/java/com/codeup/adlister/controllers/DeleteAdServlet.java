@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +21,22 @@ public class DeleteAdServlet extends HttpServlet
         } else {
             long deleteID = Long.parseLong(request.getParameter("deleteID"));
             System.out.println(deleteID);
-            DaoFactory.getAdsDao().deleteCategories(deleteID);
-            DaoFactory.getAdsDao().deleteAd(deleteID);
-            response.sendRedirect("/profile");
+            User user = (User) request.getSession().getAttribute("user");
+            Ad check = null;
+            try {
+                check = DaoFactory.getAdsDao().findAdbyID(deleteID);
+                if (user.getId()!=check.getUserId()){
+                    response.sendRedirect("/profile");
+                }else {
+                    DaoFactory.getAdsDao().deleteCategories(deleteID);
+                    DaoFactory.getAdsDao().deleteAd(deleteID);
+                    response.sendRedirect("/profile");
+                }
+            } catch (SQLException e) {
+                response.sendRedirect("/profile");
+            }
+
+
         }
     }
 }
