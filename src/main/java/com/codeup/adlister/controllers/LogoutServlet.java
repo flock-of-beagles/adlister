@@ -10,7 +10,16 @@ import java.io.IOException;
 public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.getSession().removeAttribute("user");
+        boolean editMessage = false;
+        if (request.getSession().getAttribute("editSuc")!=null){
+            System.out.println("editSuc true");
+            editMessage = true;
+        }
         request.getSession().invalidate();
-        response.sendRedirect("/login");
+        if (editMessage){
+            response.sendRedirect("/login?editValid=1");
+        }else {
+            response.sendRedirect("/login");
+        }
     }
 }
