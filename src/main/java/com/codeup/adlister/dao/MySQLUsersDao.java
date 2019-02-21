@@ -75,4 +75,12 @@ public class MySQLUsersDao implements Users {
         stmt.executeUpdate();
     }
 
+    public User findById (long userID) throws SQLException{
+        String searchQuery = "SELECT * FROM users WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(searchQuery);
+        stmt.setLong(1,userID);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        return extractUser(rs);
+    }
 }

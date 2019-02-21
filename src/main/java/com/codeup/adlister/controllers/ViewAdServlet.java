@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +28,8 @@ public class ViewAdServlet extends HttpServlet {
         Ad specAd = null;
         List<Long> categories = null;
         try {
-            specAd = DaoFactory.getAdsDao().findAdbyID(id);
+            specAd = DaoFactory.getAdsDao().findAdbyID(id);long userID = specAd.getUserId();
+            User user =
             request.getSession().setAttribute("specAd", specAd);
             categories = DaoFactory.getAdsDao().findCategoriesbyID(id);
             if (categories.contains(1L)){
