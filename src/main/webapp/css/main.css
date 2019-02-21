@@ -23,7 +23,11 @@ h1
 {
     width: 4.5em;
 }
-
+.showAds{
+    display: inline-block;
+    max-width:45%;
+    padding: 10px;
+}
 #viewProfile
 {
     width: 5.6em;
@@ -64,6 +68,12 @@ a:hover
 {
     text-decoration: none;
     color: #d05702;
+}
+.ad-name{
+    color: #d05702;
+}
+.ad-name:hover{
+    color: #0060be;
 }
 
 .navbar-right .anchorHover:hover
@@ -233,12 +243,15 @@ input[type='checkbox'] {
 }
 .title{
     color:#d05702;
+    text-shadow:0px 5px 10px #000;
 }
 .title2{
     color:#0060be;
+    text-shadow:0px 5px 10px #000;
 }
 .title3{
     color: #d05702;
+    text-shadow:0px 5px 10px #000;
 }
 #editTitle{
     font-family: 'Encode Sans Condensed', sans-serif;
