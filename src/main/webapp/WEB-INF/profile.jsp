@@ -13,18 +13,18 @@
         <h1 class="title2">Welcome, ${sessionScope.user.username}!</h1>
         <h1 class="title" style="color:#88959b;text-align:left">Here are all of your ads.</h1>
         <c:forEach var="ad" items="${profileAds}">
-            <div class="col-md-6">
-
+            <div class="col-md-6 zoom"
+                 style="display: inline-block;padding:20px;max-width:45%">
                 <a href="/ads/view?id=${ad.id}">
-                <h2>
+                <h2 class="ad-name">
                         ${ad.title}
                 </h2>
                 </a>
-                <p>${ad.description}</p>
+                <p class="description">${ad.description}</p>
 
                 <%--Redirects to edit page while stashing ad to be edited ID in session--%>
-                <a href="/ads/edit?editID=${ad.id}">Edit Ad</a>
-                <a href="/delete?deleteID=${ad.id}"style="padding-left:4rem">Delete Ad</a>
+                <a href="/ads/edit?editID=${ad.id}"style="padding-left:18rem">Edit Ad</a>
+                <a href="/delete?deleteID=${ad.id}"style="padding-left:3rem">Delete Ad</a>
             </div>
         </c:forEach>
 
