@@ -37,7 +37,7 @@
                 <a class="indexAnchor" href="/search/result?SearchID=2">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title" style="color:#d05702">
+                        <h3 class="card-title" style="color:#0060be">
                             Looking to recruit a hero?
                         </h3>
                         <h4 class="card-subtitle mb-2 text-muted">
