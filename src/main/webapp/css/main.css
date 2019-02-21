@@ -264,7 +264,12 @@ a.card-link
     color: #88959b;
     font-size: x-large;
 }
-
+.card-title{
+    text-shadow: 0px 5px 10px #000;
+}
+h4 {
+    text-shadow: 0px 5px 10px #000;
+}
 .description{
     color: #88959b;
     font-size: x-large;
