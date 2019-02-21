@@ -43,16 +43,39 @@ h1
     top: -6em;
     left: 47em;
     width: 40%;
-    margin: 0;
+    margin: 0 !important;
 }
+
+#searchPgInput
+{
+    position: relative;
+    top: 6.8em;
+    left: 4em;
+    height: 10em;
+}
+
+#searchLabel
+{
+    color: #d05702;
+    position: relative;
+    left: 14em;
+}
+
+#searchPgBtn
+{
+    position: relative;
+    top: 6.8em;
+    left: 4em;
+}
+
 
 .searchForm1
 {
     position: relative;
     top: 2em;
     left: 2em;
-    width: 40%;
-    margin: 0;
+    width: 36em;
+    margin: 0 !important;
 }
 
 #contact
@@ -69,6 +92,13 @@ a:hover
 .navbar-right .anchorHover:hover
 {
     color: #d05702;
+}
+
+.searchInput
+{
+    position: relative;
+    top: 1em;
+    height: 5em;
 }
 
 #myNav .anchorHover:hover
