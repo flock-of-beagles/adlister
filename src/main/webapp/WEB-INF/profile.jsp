@@ -11,10 +11,10 @@
 
     <div class="container">
         <h1 class="title2">Welcome, ${sessionScope.user.username}!</h1>
-        <h1 class="title" style="color:#88959b;text-align:left">Here are all of your ads.</h1>
+        <h1 class="title" style="color:#88959b">Here are all of your ads.</h1>
         <c:forEach var="ad" items="${profileAds}">
             <div class="col-md-6 zoom"
-                 style="display: inline-block;padding:20px;max-width:45%">
+                 style="display: inline-block;padding:20px;max-width:45%;vertical-align: top">
                 <a href="/ads/view?id=${ad.id}">
                 <h2 class="ad-name">
                         ${ad.title}
