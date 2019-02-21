@@ -17,11 +17,13 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <h1>Search Test</h1>
     <form class="searchForm1" action="/search/result" method="post">
-        <div class="form-group">
-            <label for="search">Enter search query</label>
-            <input id="search" name="search" class="inputFont form-control" type="text">
+        <div class="form-group" id="searchPgInput">
+            <label id="searchLabel" for="search">
+                Enter search query
+            </label>
+            <input id="search" name="search" class="searchInput inputFont form-control" type="text">
         </div>
-        <input type="submit" class="btn btn-block btn-primary">
+        <input id="searchPgBtn" type="submit" class="btn btn-block btn-primary">
         <br>
     </form>
         <form class="searchForm2" action="/search/result" method="post">

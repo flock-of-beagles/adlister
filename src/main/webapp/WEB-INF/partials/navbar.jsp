@@ -117,7 +117,7 @@
                 <div class="overlay-content">
                     <c:if test="${sessionScope.user.username != null}">
                         <h1 id="greetingNav">
-                            Welcome ${sessionScope.user.username}
+                            Welcome, ${sessionScope.user.username}!
                         </h1>
                     </c:if>
                     <a class="anchorHover" id="contact" href="/search">
