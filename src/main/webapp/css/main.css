@@ -65,7 +65,8 @@ h2>a:hover{
 {
     color: #d05702;
     position: relative;
-    left: 14em;
+    font-size: 2em;
+    left: 5em;
 }
 
 #searchPgBtn
@@ -111,7 +112,8 @@ a:hover
 {
     position: relative;
     top: 1em;
-    height: 5em;
+    vertical-align: top;
+    padding-bottom: 2em;
 }
 
 #myNav .anchorHover:hover
