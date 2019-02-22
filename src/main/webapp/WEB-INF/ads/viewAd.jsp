@@ -18,9 +18,10 @@
     <div class="jumbotron">
         <h2 class="title">${specAd.title}</h2>
         <p class="description">${specAd.description}</p>
-        <p class="description">Created by ${user.username}</p>
+        <hr>
+        <p class="description"><span id="createdBy">Created by: </span> ${user.username}</p>
         <a href="mailto:${user.email}?Subject=RE: ${specAd.title}" target="_blank">Contact This User</a>
-        <hr class="my-4">
+        <hr>
             <div class="form-group">
                 <label class="label2" for="checkbox1"<c:if test="${category1==1}">style="color:#d05702"</c:if>>Local</label>
                 <%--Checkboxes only send a value if they are checked, thus in servlets we can verfiy them by comparing them against null--%>

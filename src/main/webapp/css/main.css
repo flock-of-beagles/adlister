@@ -187,20 +187,20 @@ div.jumbotron{
 
 #dogs
 {
-    position: fixed;
-    font-size:1.5em;
+    position: relative;
+    font-size: 1.5em;
     top: 0em;
-    left: 5.5em;
-    color:#d05702;
+    left: 1em;
+    color: #d05702;
     text-shadow: 2px 2px white;
 }
 #under
 {
-    position: fixed;
-    font-size:1.5em;
+    position: relative;
+    font-size: 1.5em;
     top: 0em;
-    left: 3.3em;
-    color:#0060be;
+    left: 1em;
+    color: #0060be;
     text-shadow: 2px 2px white;
 }
 #subheading
@@ -209,6 +209,17 @@ div.jumbotron{
     left: 6rem;
     color: #88959b;
     text-shadow:0px 5px 10px #000;
+}
+#createdBy{
+    color: #0060be;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 .card
 {
