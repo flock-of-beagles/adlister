@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -17,6 +18,9 @@ public class RegisterServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
         } else {
+            System.out.println(request.getSession().getAttribute("duplicate"));
+            request.setAttribute("passItOn", request.getSession().getAttribute("duplicate"));
+            request.getSession().removeAttribute("duplicate");
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
         }
     }
@@ -37,10 +41,21 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register");
             return;
         }
-
+        try {
+            boolean userCheck = DaoFactory.getUsersDao().userCheck(username);
+            System.out.println("Here is the user check" + userCheck);
+            if (userCheck){
+                request.getSession().setAttribute("duplicate", 1);
+                response.sendRedirect("/register");
+            }else {
+                User user = new User(username, email, Password.hash(password));
+                DaoFactory.getUsersDao().insert(user);
+                response.sendRedirect("/login");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         // create and save a new user
-        User user = new User(username, email, Password.hash(password));
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
+
     }
 }

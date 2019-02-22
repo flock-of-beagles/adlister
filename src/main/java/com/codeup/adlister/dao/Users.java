@@ -10,4 +10,5 @@ public interface Users {
     Long insert(User user);
     void editUser (User user, long userID) throws SQLException;
     User findById (long userID) throws SQLException;
+    boolean userCheck (String username) throws SQLException;
 }
