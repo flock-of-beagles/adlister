@@ -10,12 +10,14 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Test" />
+        <jsp:param name="title" value="Search" />
     </jsp:include>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <h1>Search Test</h1>
+    <h1 class="formLabels">
+        Search
+    </h1>
     <form class="searchForm1" action="/search/result" method="post">
         <div class="form-group" id="searchPgInput">
             <label id="searchLabel" for="search">
