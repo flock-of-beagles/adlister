@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,6 +9,9 @@
 <body>
     <jsp:include page="partials/navbar.jsp" />
     <div class="container">
+        <c:if test="${passItOn!=null}">
+            <h1 class="formLabels">Sorry, that username is already in use</h1>
+        </c:if>
         <h1 class="titleColor">
             Please fill in your information.
         </h1>

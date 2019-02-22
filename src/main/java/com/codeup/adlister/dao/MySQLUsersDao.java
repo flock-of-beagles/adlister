@@ -82,4 +82,16 @@ public class MySQLUsersDao implements Users {
         ResultSet rs = stmt.executeQuery();
         return extractUser(rs);
     }
+
+    public boolean userCheck (String username) throws SQLException {
+        String query = "SELECT * FROM users WHERE username = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            boolean check = true;
+            if (!rs.next()){
+                check = false;
+            }
+        return check;
+    }
 }
