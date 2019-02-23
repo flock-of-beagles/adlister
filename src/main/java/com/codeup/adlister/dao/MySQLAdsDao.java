@@ -122,16 +122,18 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> findAdsByCategories (List<Long> categories) throws SQLException {
         String search = categories.toString();
         search = search.replaceAll("\\[", "(").replaceAll("\\]",")");
-        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category in ? GROUP BY ads_categories.ad_id";
-        PreparedStatement stmt = connection.prepareStatement(searchQuery);
-        stmt.setString(1,search);
-        ResultSet rs = stmt.executeQuery();
+        System.out.println(search);
+        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category in "+search+" GROUP BY ads_categories.ad_id";
+        Statement stmt = connection.prepareStatement(searchQuery);
+        System.out.println(stmt);
+        ResultSet rs = ((PreparedStatement) stmt).executeQuery();
         return createAdsFromResults(rs);
     }
-    public List<Ad> findAdsByCategories (long category) throws SQLException {
+    public List<Ad> findAdsByCategory (long category) throws SQLException {
         String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category = ? GROUP BY ads_categories.ad_id";
         PreparedStatement stmt = connection.prepareStatement(searchQuery);
         stmt.setLong(1,category);
+        System.out.println(stmt);
         ResultSet rs = stmt.executeQuery();
         return createAdsFromResults(rs);
     }

@@ -20,7 +20,7 @@ public class SearchResultsServlet extends HttpServlet {
         if (searchCheck==1){
             long hold = 10;
             try {
-                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategories(hold);
+                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategory(hold);
                 request.getSession().setAttribute("ads", results);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -31,7 +31,7 @@ public class SearchResultsServlet extends HttpServlet {
         } else if (searchCheck==2){
             long hold = 11;
             try {
-                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategories(hold);
+                List<Ad> results = DaoFactory.getAdsDao().findAdsByCategory(hold);
                 request.getSession().setAttribute("ads", results);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -73,6 +73,7 @@ public class SearchResultsServlet extends HttpServlet {
         }else {
             List<Long> categories = new ArrayList<>();
             if (request.getParameter("checkbox1") != null){
+                System.out.println("CHECKED");
                 categories.add(1L);
             }
             if (request.getParameter("checkbox2") != null){
@@ -106,6 +107,7 @@ public class SearchResultsServlet extends HttpServlet {
                 categories.add(11L);
             }
             try {
+                System.out.println(categories);
                 List<Ad> results = DaoFactory.getAdsDao().findAdsByCategories(categories);
                 request.getSession().setAttribute("ads", results);
             } catch (SQLException e) {

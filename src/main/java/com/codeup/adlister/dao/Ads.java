@@ -21,5 +21,5 @@ public interface Ads {
     void deleteAd (long id);
     List<Ad> findAdsbyTitleorDescription(String search) throws SQLException;
     List<Ad> findAdsByCategories (List<Long> categories) throws SQLException;
-    List<Ad> findAdsByCategories (long category) throws SQLException;
+    List<Ad> findAdsByCategory (long category) throws SQLException;
 }
