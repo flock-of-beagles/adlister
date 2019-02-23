@@ -123,11 +123,10 @@ public class MySQLAdsDao implements Ads {
         String search = categories.toString();
         search = search.replaceAll("\\[", "(").replaceAll("\\]",")");
         System.out.println(search);
-        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category in ? GROUP BY ads_categories.ad_id";
-        PreparedStatement stmt = connection.prepareStatement(searchQuery);
-        stmt.setString(1,search);
+        String searchQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description FROM ads JOIN ads_categories ON ads.id = ads_categories.ad_id WHERE ads_categories.ad_category in "+search+" GROUP BY ads_categories.ad_id";
+        Statement stmt = connection.prepareStatement(searchQuery);
         System.out.println(stmt);
-        ResultSet rs = stmt.executeQuery();
+        ResultSet rs = ((PreparedStatement) stmt).executeQuery();
         return createAdsFromResults(rs);
     }
     public List<Ad> findAdsByCategory (long category) throws SQLException {
